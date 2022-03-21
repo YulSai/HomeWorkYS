@@ -1,6 +1,7 @@
 package HomeWork1;
 
-//Использовать ВСЕ возможные побитовые операции с числами -42 и -15.
+//1.3 Использовать ВСЕ возможные побитовые операции с числами -42 и -15
+
 public class Task02 {
     public static void main(String[] args) {
         int a;
