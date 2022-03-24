@@ -19,7 +19,7 @@ public class Task17 {
 
     public static String toBinaryString(byte number) {
         String record = "";
-        int b = 1;  //00000001
+        int b = 1;
 
         for (int i = 0; i < 8; i++) {
             record = (((number & b) != 0) ? "1" : "0") + record;
