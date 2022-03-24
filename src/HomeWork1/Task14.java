@@ -6,7 +6,6 @@ public class Task14 {
     public static void main(String[] args) {
         String name;
 
-
         Scanner n = new Scanner(System.in);
         System.out.println("Как тебя зовут?: ");
         while (n.hasNextInt()) {

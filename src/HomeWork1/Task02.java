@@ -23,6 +23,9 @@ public class Task02 {
         c = a | b;      // 11010110 | 11110001 = 11110111
         System.out.println(a + " | " + b + " = " + c);
 
+        c = b | a;      // 11110001 | 11010110 = 11110111
+        System.out.println(b + " | " + a + " = " + c);
+
         c = a ^ b;      // 11010110 ^ 11110001 = 00100111
         System.out.println(a + " ^ " + b + " = " + c);
 
@@ -30,7 +33,7 @@ public class Task02 {
         System.out.println(a + " >> " + b + " = " + c);
 
         c = b >> a;      // 11110001 >> 11010110 = 11111111
-        System.out.println(a + " >> " + b + " = " + c);
+        System.out.println(b + " >> " + a + " = " + c);
 
         c = a >> 3;      // 11010110 >> 00000011 = 11111010
         System.out.println(a + " >> 3" + " = " + c);

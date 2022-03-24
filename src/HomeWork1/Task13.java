@@ -6,12 +6,11 @@ public class Task13 {
     public static void main(String[] args) {
         String name;
 
-
         Scanner n = new Scanner(System.in);
         System.out.println("Как тебя зовут?: ");
         while (n.hasNextInt()) {
             n.nextLine();
-            System.out.print("Это не имя! Так как тебя все таки зовут?: ");
+            System.out.print("Ты уверен, что в твоем имени есть цифра?! \nТак как тебя все таки зовут?: ");
         }
         name = n.nextLine();
 
