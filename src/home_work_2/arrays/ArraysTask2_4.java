@@ -8,7 +8,7 @@ public class ArraysTask2_4 {
 
         int[] mas;
 
-        mas = ArraysUtils.arrayRandom(50, 100); // создание массива заданного размера с рандомными элементами
+        mas = home_work_2.arrays.ArraysUtils.arrayRandom(50, 100);
 
 
         // вызов методов решения задач и вывод результатов в консоль
@@ -36,9 +36,9 @@ public class ArraysTask2_4 {
     public static int sumPosElements(int[] mas) {
         int sum = 0;
 
-        for (int i = 0; i < mas.length; i++) {          // цикл для перебора каждого элемента массива
-            if (mas[i] > 0 & mas[i] % 2 == 0) {         // условие нахождения четных положительных элементов
-                sum = sum + mas[i];                     // суммирование найденных элементов
+        for (int i = 0; i < mas.length; i++) {
+            if (mas[i] > 0 & mas[i] % 2 == 0) {
+                sum = sum + mas[i];
             }
         }
         return sum;
@@ -49,12 +49,12 @@ public class ArraysTask2_4 {
         int max;
         int length;
 
-        length = mas.length;                                // присвоение переменной значения длины массива
+        length = mas.length;
 
         max = 0;
-        for (int i = 0; i < mas.length; i += 2) {           // цикл для перебора каждого элемента массива с четным индексом
-            if (mas[i] > max) {                             // условие проверки максимального значения
-                max = mas[i];                               // запись максимального значения в переменную
+        for (int i = 0; i < mas.length; i += 2) {
+            if (mas[i] > max) {
+                max = mas[i];
             }
         }
         return max;
@@ -70,16 +70,16 @@ public class ArraysTask2_4 {
         sum = 0;
         min = 0;
 
-        for (int i = 0; i < mas.length; i++) {              // цикл для перебора каждого элемента массива
-            sum = sum + mas[i];                             // сумма элементов массива
+        for (int i = 0; i < mas.length; i++) {
+            sum = sum + mas[i];
         }
 
-        average = sum / mas.length;                         // расчет среднеарифитического значения элементов массива
+        average = sum / mas.length;
 
-        for (int i = 0; i < mas.length; i++) {              // цикл для перебора каждого элемента массива
-            if (mas[i] < average) {                         // условие нахождения значения меньше среднеарифмитического
-                min = mas[i];                               // запись мин значения
-                result = result + " " + mas[i];             // запись найденнх элементов
+        for (int i = 0; i < mas.length; i++) {
+            if (mas[i] < average) {
+                min = mas[i];
+                result = result + " " + mas[i];
             }
         }
         return result;
@@ -92,30 +92,30 @@ public class ArraysTask2_4 {
         int count;
         String result = "";
 
-        minFirst = mas[0];                                  // присвоение значения первого элемента переменной
-        count = 0;                                          // присвоение нулевого значения счетчику
+        minFirst = mas[0];
+        count = 0;
 
-        for (int i = 1; i < mas.length; i++) {              // цикл для перебора каждого элемента массива
-            if (mas[i] < minFirst) {                        // сравнение элементов массива
-                minFirst = mas[i];                          // запись в перменную значения мин элемента
-                count = i;                                  // счетчик для определения индекса мин элемента
+        for (int i = 1; i < mas.length; i++) {
+            if (mas[i] < minFirst) {
+                minFirst = mas[i];
+                count = i;
             }
         }
 
-        if (minFirst == mas[0]) {                           // условие для присвоения значения переменной, где будет
-            minSecond = mas[1];                             // храниться мин значение еще одного элемента массива
+        if (minFirst == mas[0]) {
+            minSecond = mas[1];
         } else {
             minSecond = mas[0];
         }
 
-        for (int i = 1; i < mas.length; i++) {              // цикл для перебора каждого элемента массива
-            if (i < count | i > count) {                    // условие исключения из перебора элемента массива minFirst
-                if (mas[i] < minSecond) {                   // сравнение элементов массива
-                    minSecond = mas[i];                     // запись в перменную значения мин элемента
+        for (int i = 1; i < mas.length; i++) {
+            if (i < count | i > count) {
+                if (mas[i] < minSecond) {
+                    minSecond = mas[i];
                 }
             }
         }
-        result = ("minFirst = " + minFirst + "\nminSecond = " + minSecond); // запись в строку найденных значений
+        result = ("minFirst = " + minFirst + "\nminSecond = " + minSecond);
 
         return result;
     }
@@ -123,34 +123,33 @@ public class ArraysTask2_4 {
     // Метод для cжатия массива, удалив элементы, принадлежащие интервалу
     public static String compressionArray(int[] mas) {
         int[] masSecond;
-        int a;                  // переменная для индекса массива
-        int b;                  // переменная для индекса массива
-        int j;                  // переменная для индекса второго массива
+        int a;
+        int b;
+        int j;
         String result;
 
 
-        // запрос данных с консоли и присвоение их значения переменным, которые будут хранить индексы элементов
         Scanner sc = new Scanner(System.in);
         System.out.println("Укажите интервал, в котором удалить эелементы: >");
         a = sc.nextInt();
         System.out.println("> ");
         b = sc.nextInt();
 
-        masSecond = new int[mas.length];            // присвоение второму массиву длины первого массива
-        j = a;                                      // присвоение переменной номера индекса
+        masSecond = new int[mas.length];
+        j = a;
         result = "";
 
-        for (int i = 0; i < a; i++) {               // цикл для перебора массива до заданного индекса а
-            masSecond[i] = mas[i];                  // присвоение элементам второга массива значения элементов первого массива
+        for (int i = 0; i < a; i++) {
+            masSecond[i] = mas[i];
         }
 
-        for (int i = b + 1; i > b & i < mas.length; i++) {  // цикл для перебора элементов массива от индекса после b
-            masSecond[j] = mas[i];                          // присвоение элементам второга массива значения элементов первого массива
-            j++;                                            // шаг
+        for (int i = b + 1; i > b & i < mas.length; i++) {
+            masSecond[j] = mas[i];
+            j++;
         }
 
-        for (int i = 0; i < masSecond.length; i++) {        // цикл перебора элементов второго массива
-            result = result + " " + masSecond[i];           // запись в строку значений элементов второго массива
+        for (int i = 0; i < masSecond.length; i++) {
+            result = result + " " + masSecond[i];
         }
         return result;
     }
@@ -163,12 +162,12 @@ public class ArraysTask2_4 {
 
         sum = 0;
 
-        for (int i = 0; i < mas.length; i++) {          // цикл перебора каждого элемента массива
-            num = mas[i];                               // присвоение переменной значения элемента массива
+        for (int i = 0; i < mas.length; i++) {
+            num = mas[i];
             while (num != 0) {
-                numberOne = num % 10;                   // нахождение последней цифры числа элемента массива
-                sum = sum + numberOne;                  // суммирование цифр массива
-                num = num / 10;                         // сокращение цифры на обработанную цифру
+                numberOne = num % 10;
+                sum = sum + numberOne;
+                num = num / 10;
             }
 
         }

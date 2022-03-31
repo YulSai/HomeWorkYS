@@ -19,26 +19,24 @@ public class loops_Task04 {
 
         // решение для 1.4.1.
         b = 3;
-        count = (long) (Math.log(max) / Math.log(Math.abs(b))); // нахождение максимальной степень, в которую можно возвести
-                                                                // число b без переполнения
+        count = (long) (Math.log(max) / Math.log(Math.abs(b)));
 
-        resultNonoverflow = a * b;                              // присваивание переменной результата (без переполнения)
-                                                                // значения, которое будем перемножать на само себя
-        for (int i = 0; i < (count - 1); i++) {                 // цикл перемножения колличества раз, которое не даст
-            resultNonoverflow *= b;                             // переполнения
-        }
-        System.out.println("Значение до переполнения при умножении на " + b + ": " + resultNonoverflow); // вывод в консоль
 
-        resultOverflow = a * b;                                 // присваивание переменной результата (с переполнением)
-                                                                // значения, которое будем перемножать на само себя
-        for (int i = 0; i <= count; i++) {                      // цикл перемножения колличества раз, которое даст
-            resultOverflow *= b;                                // переполнение
+        resultNonoverflow = a * b;
+
+        for (int i = 0; i < (count - 1); i++) {
+            resultNonoverflow *= b;
         }
-        System.out.println("Значение после переполнения при при умножении на " + b + ": " + resultOverflow); // вывод в консоль
+        System.out.println("Значение до переполнения при умножении на " + b + ": " + resultNonoverflow);
+
+        resultOverflow = a * b;
+        for (int i = 0; i <= count; i++) {
+            resultOverflow *= b;
+        }
+        System.out.println("Значение после переполнения при при умножении на " + b + ": " + resultOverflow);
         System.out.println();
 
 
-        // остальные решения аналогичны
         // решение для 1.4.2.
         b = 188;
         count = (long) (Math.log(max) / Math.log(Math.abs(b)));

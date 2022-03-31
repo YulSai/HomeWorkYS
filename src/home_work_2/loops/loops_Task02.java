@@ -17,24 +17,24 @@ public class loops_Task02 {
         strNumber = args[0];
         mult = 1;
 
-        checkLine = strNumber.matches("[0-9]+[\\.]?[0-9]*");    // проверка на строку
+        checkLine = strNumber.matches("[0-9]+[\\.]?[0-9]*");
         if (!checkLine) {
             System.out.println("Введено не число");
         } else {
-            checkNumber = Double.parseDouble(strNumber);                // проверка на вещественное число
+            checkNumber = Double.parseDouble(strNumber);
             if (checkNumber % 1 != 0) {
-                System.out.print("Это не целое число!");                // проверка на целочисленность
+                System.out.print("Это не целое число!");
             } else if (checkNumber < 0) {
-                System.out.println("Это отрицательное число.");         // проверка на положительность
+                System.out.println("Это отрицательное число.");
             } else {
-                number = Long.parseLong(strNumber);                     // преобразование в целое число
-                while (number > 0) {                                    // цикл нахождения цифр числа и их перемножения
+                number = Long.parseLong(strNumber);
+                while (number > 0) {
                     remainder = number % 10;
                     mult *= remainder;
                     number /= 10;
                 }
                 // печать результата в консоль
-                System.out.print(forPrintResult(strNumber));            // вызов метода печати
+                System.out.print(forPrintResult(strNumber));
                 System.out.println("=" + mult);
             }
         }
@@ -47,17 +47,17 @@ public class loops_Task02 {
         int length;
         int lastSymbol;
 
-        forPrint = strNumber.toCharArray();   // преобразование строки в массив символов
-        length = forPrint.length;             // присваивание переменной значения длины массива
-        lastSymbol = length - 1;               // присваивание значения последнего символа массива
+        forPrint = strNumber.toCharArray();
+        length = forPrint.length;
+        lastSymbol = length - 1;
 
-        for (int i = 0; i < (length - 1); i++) { // цикл для перебора символов и записи их в строку
+        for (int i = 0; i < (length - 1); i++) {
             if (i < length) {
                 toPrint = forPrint[i] + "*";
                 System.out.print(toPrint);
             }
         }
-        toPrint = String.valueOf(forPrint[lastSymbol]); // вывод в консоль
+        toPrint = String.valueOf(forPrint[lastSymbol]);
 
         return toPrint;
     }

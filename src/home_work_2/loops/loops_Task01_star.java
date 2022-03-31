@@ -13,19 +13,19 @@ public class loops_Task01_star {
         result = 1;
         strNumber = args[0];
 
-        check = Double.parseDouble(strNumber);  // преобразование в вещественное число
+        check = Double.parseDouble(strNumber);
 
         if (check % 1 != 0) {
-            System.out.print("Это не целое число!");    // проверка на целочисленность числа
+            System.out.print("Это не целое число!");
         } else if (check < 0) {
-            System.out.println("Это отрицательное число."); // проверка на положительность числа
+            System.out.println("Это отрицательное число.");
         } else {
-            number = Long.parseLong(strNumber);             // преобразование в целое число
-            result = factorial(number);                     // вызов метода рекурсии
+            number = Long.parseLong(strNumber);
+            result = factorial(number);
 
-            if (result < number) {                           // проверка на переполнение
+            if (result < number) {
                 System.out.println("Произошло переполнение. Результат некорректен.");
-            } else {                                         // вывод результата в консоль
+            } else {
                 System.out.print(forPrintResult(number));
                 System.out.println("=" + result);
             }
@@ -46,11 +46,11 @@ public class loops_Task01_star {
     // метод форматирования строки для вывода в консоль
     public static String forPrintResult(long number) {
         String forPrint = null;
-        for (long i = 1; i <= number; i++) {    // цикл для формата симоволов
+        for (long i = 1; i <= number; i++) {
             if (i < number) {
                 forPrint = i + "*";
                 System.out.print(forPrint);
-            } else if (i == number) {           // цикл для формата последнего символа
+            } else if (i == number) {
                 forPrint = String.valueOf(i);
             }
         }

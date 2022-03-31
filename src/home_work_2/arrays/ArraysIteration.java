@@ -8,7 +8,7 @@ public class ArraysIteration {
 
         int[] container;
 
-        container = ArraysUtils.arrayFromConsole();  // вызов метода создания массива с запросом данных с консоли
+        container = home_work_2.arrays.ArraysUtils.arrayFromConsole();  // вызов метода создания массива с запросом данных с консоли
 
         allElements(container);                      // вызов метода вывода в консоль всех элементов массива
         System.out.println();
@@ -25,33 +25,33 @@ public class ArraysIteration {
         int length;
         int i;
 
-        length = container.length;                      // присваиваем значение переменной длины массива
+        length = container.length;
 
         System.out.println("Вывод всех элементов с помощью for");
-        for (i = 0; i < length; i++) {                  // цикл для перебора каждого элемента массива
-            System.out.print(container[i] + " ");       // вывод результата в консоль
+        for (i = 0; i < length; i++) {
+            System.out.print(container[i] + " ");
         }
         System.out.println();
 
         System.out.println("Вывод всех элементов с помощью while");
         i = 0;
-        while (i < length) {                            // цикл для перебора каждого элемента массива
-            System.out.print(container[i] + " ");       // вывод результата в консоль
+        while (i < length) {
+            System.out.print(container[i] + " ");
             i++;
         }
         System.out.println();
 
         System.out.println("Вывод всех элементов с помощью do...while");
         i = 0;
-        do {                                            // цикл для перебора каждого элемента массива
-            System.out.print(container[i] + " ");       // вывод результата в консоль
+        do {
+            System.out.print(container[i] + " ");
             i++;
-        } while (i < length);                           // условие цикла
+        } while (i < length);
         System.out.println();
 
         System.out.println("Вывод всех элементов с помощью foreach");
-        for (int j : container) {                       // цикл для перебора каждого элемента массива
-            System.out.print(j + " ");                  // вывод результата в консоль
+        for (int j : container) {
+            System.out.print(j + " ");
         }
         return container;
     }
@@ -61,37 +61,37 @@ public class ArraysIteration {
         int length;
         int i = 0;
 
-        length = container.length;                              // присваиваем значение переменной длины массива
+        length = container.length;
 
         System.out.println("Вывод каждого второго элемента с помощью for");
-        for (i = 1; i < length; i += 2) {                       // цикл для перебора каждого второго элемента массива
-            System.out.print(container[i] + " ");               // вывод результата в консоль
+        for (i = 1; i < length; i += 2) {
+            System.out.print(container[i] + " ");
         }
         System.out.println();
 
         System.out.println("Вывод каждого второго элемента с помощью while");
         i = 1;
-        while (i < length) {                                    // цикл для перебора каждого второго элемента массива
-            System.out.print(container[i] + " ");               // вывод результата в консоль
-            i += 2;                                             // шаг цикла
+        while (i < length) {
+            System.out.print(container[i] + " ");
+            i += 2;
         }
         System.out.println();
 
         System.out.println("Вывод каждого второго элемента с помощью do...while");
         i = 1;
-        do {                                                        // цикл для перебора каждого второго элемента массива
-            System.out.print(container[i] + " ");                   // вывод результата в консоль
-            i += 2;                                                 // шаг цикла
-        } while (i < length);                                       // условие выполнения цикла
+        do {
+            System.out.print(container[i] + " ");
+            i += 2;
+        } while (i < length);
         System.out.println();
 
         System.out.println("Вывод каждого второго элемента с помощью for");
         i = 0;
-        for (int j : container) {                                   // цикл для перебора каждого элемента массива
-            if (i % 2 != 0) {                                       // условие перебора только каждого второго элемента
-                System.out.print(j + " ");                          // вывод результата в консоль
+        for (int j : container) {
+            if (i % 2 != 0) {
+                System.out.print(j + " ");
             }
-            i++;                                                    // шаг
+            i++;
         }
 
         return container;
@@ -102,36 +102,36 @@ public class ArraysIteration {
         int length;
         int i = 0;
 
-        length = container.length;                                  // присваиваем значение переменной длины массива
+        length = container.length;
 
         System.out.println("Вывод в обратном порядке с помощью for");
-        for (i = length - 1; i >= 0; i--) {                         // цикл перебора каждого элемента массива в обратном порядке
-            System.out.print(container[i] + " ");                   // вывод результата в консоль
+        for (i = length - 1; i >= 0; i--) {
+            System.out.print(container[i] + " ");
         }
         System.out.println();
 
         System.out.println("Вывод в обратном порядке с помощью while");
         i = length - 1;
-        while (i >= 0) {                                            // цикл перебора каждого элемента массива в обратном порядке
-            System.out.print(container[i] + " ");                   // вывод результата в консоль
-            i--;                                                    // шаг
+        while (i >= 0) {
+            System.out.print(container[i] + " ");
+            i--;
         }
         System.out.println();
 
         System.out.println("Вывод в обратном порядке с помощью do...while");
         i = length - 1;
-        do {                                                        // цикл перебора каждого элемента массива в обратном порядке
-            System.out.print(container[i] + " ");                   // вывод результата в консоль
-            i--;                                                    // шаг
-        } while (i >= 0);                                           // условие цикла
+        do {
+            System.out.print(container[i] + " ");
+            i--;
+        } while (i >= 0);
         System.out.println();
 
         System.out.println("Вывод в обратном порядке с помощью foreach");
         String result = "";
-        for (int j : container) {                                    // цикл перебора каждого элемента массива
-            result = j + " " + result;                               // запись элементов массива в обратном порядке в строку
+        for (int j : container) {
+            result = j + " " + result;
         }
-        System.out.println(result);                                 // вывод результата в консоль
+        System.out.println(result);
 
         return container;
     }

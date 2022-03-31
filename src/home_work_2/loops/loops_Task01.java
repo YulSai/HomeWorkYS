@@ -12,22 +12,22 @@ public class loops_Task01 {
         result = 1;
         strNumber = args[0];
 
-        check = Double.parseDouble(strNumber); // преобразование в вещественное число
+        check = Double.parseDouble(strNumber);
 
-        if (check % 1 != 0) {                   // проверка на целочисленность числа
+        if (check % 1 != 0) {
             System.out.print("Это не целое число!");
-        } else if (check < 0) {                 // проверка на положительность числа
+        } else if (check < 0) {
             System.out.println("Это отрицательное число.");
         } else {
-            number = Long.parseLong(strNumber); // преобразование в целое число
+            number = Long.parseLong(strNumber);
 
-            for (long i = 1; i <= number; i++) {  // цикл перемножения чисел от 1 до введенного значения
+            for (long i = 1; i <= number; i++) {
                 result *= i;
             }
-            if (result < number) {                  // проверка на переполнение
+            if (result < number) {
                 System.out.println("Произошло переполнение. Результат некорректен.");
-            } else {                                // вывод результата в консоль
-                System.out.print(forPrintResult(number)); // вызов метода
+            } else {
+                System.out.print(forPrintResult(number));
                 System.out.println("=" + result);
             }
         }
@@ -37,11 +37,11 @@ public class loops_Task01 {
     public static String forPrintResult(long number) {
         String forPrint = null;
 
-        for (long i = 1; i <= number; i++) {        // цикл для формата симоволов
+        for (long i = 1; i <= number; i++) {
             if (i < number) {
                 forPrint = i + "*";
                 System.out.print(forPrint);
-            } else if (i == number) {               // цикл для формата последнего символа
+            } else if (i == number) {
                 forPrint = String.valueOf(i);
             }
         }
