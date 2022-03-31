@@ -4,7 +4,12 @@ import java.util.Scanner;
 
 public class loops_Task03 {
     public static void main(String[] args) {
-        // Возведение в степень введенного числа
+        /* Класс выводит результат возведение в степень введенных пользователем чисел.
+        @param numberOne - основание степени
+        @param numberTwo - показатель степени
+        @param degree - степень числа
+        Выполняется проверка ввода для основания степени на ввод только чисел, а для показателя степени
+        на целочисленность и положительность.*/
 
         double numberOne;
         int numberTwo;

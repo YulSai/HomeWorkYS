@@ -1,7 +1,10 @@
 Пакет arrays:
 ArraysIteration решает пункт ДЗ 2.2
-
 ArraysTask2_4 решает пункт ДЗ 2.4
+DoWhileOperation решает пункт ДЗ 2.3.1
+WhileOperation решает пункт ДЗ 2.3.2
+ForOperation решает пункт ДЗ 2.3.3
+ForEachOperation решает пункт ДЗ 2.3.4
 
 Пакет loops:
 loops_Task01 решает пункт ДЗ 1.1.1
@@ -17,4 +20,5 @@ SortsMain решает пункт ДЗ 4.2
 
 Пакет utils:
 ArraysUtils решает пункт ДЗ 2.1
+IArraysOperation решает пункт ДЗ 2.3
 SortsUtils решает пункт ДЗ 4.1

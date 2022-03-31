@@ -2,7 +2,13 @@ package home_work_2.loops;
 
 public class loops_Task01 {
     public static void main(String[] args) {
-        // Перемножить числа от 1 до числа (включительно) введенного через аргумент к исполняемой программе
+        /* Класс выводит решение и результат факториала числа, введенного как аргумент
+        String args[0].
+        @param strNumber - введенный аргумент типа String
+        @param number - введеный аргумент типа long
+        @param check - введенный аргумент типа double
+        @param result - результат вычисления типа long
+        Выполняется проверка ввода на целочисленность и положительность, а так же на перполнение.*/
 
         long number;
         long result;

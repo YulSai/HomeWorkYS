@@ -1,19 +1,22 @@
 package home_work_2.utils;
 
 public class SortsUtils {
-    public static void main(String[] args) {
-    }
+    /* В классе описаны методы для сортировки массивов:
+        bubble - метод пузырьковой сортировки
+        shake - метод шейкерной сортировки
+        Результаты сортировок выведены в консоль*/
 
-    // Метод пузырьковой сортировки
     public static void bubble(int[] arr) {
         boolean sorted;
         int temp;
+        String result;
 
         System.out.print("Исходный массив: ");
+        result = "";
         for (int i = 0; i < arr.length; i++) {
-
-            System.out.printf("%d ", arr[i]);
+            result += arr[i] + " ";
         }
+        System.out.printf(result);
         System.out.println();
 
         sorted = false;
@@ -29,21 +32,25 @@ public class SortsUtils {
             }
         }
         System.out.print("Отсортированный массив: ");
+        result = "";
         for (int i = 0; i < arr.length; i++) {
-            System.out.printf("%d ", arr[i]);
+            result += arr[i] + " ";
         }
+        System.out.printf(result);
     }
 
-    // Метод шейкерной сортировки
     public static void shake(int[] arr) {
         int right;
         int left;
         int temp;
+        String result;
 
         System.out.print("Исходный массив: ");
+        result = "";
         for (int i = 0; i < arr.length; i++) {
-            System.out.printf("%d ", arr[i]);
+            result += arr[i] + " ";
         }
+        System.out.printf(result);
         System.out.println();
 
         right = arr.length - 1;
@@ -68,13 +75,14 @@ public class SortsUtils {
         left++;
 
         System.out.print("Отсортированный массив: ");
-        for (
-                int i = 0;
-                i < arr.length; i++) {
-            System.out.printf("%d ", arr[i]);
+        result = "";
+        for (int i = 0; i < arr.length; i++) {
+            result += arr[i] + " ";
         }
+        System.out.printf(result);
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
     }
 }
-
-
-

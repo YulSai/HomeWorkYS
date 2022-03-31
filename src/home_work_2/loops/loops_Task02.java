@@ -2,8 +2,14 @@ package home_work_2.loops;
 
 public class loops_Task02 {
     public static void main(String[] args) {
-        // Все цифры из числа введенного через аргумент к исполняемой программе перемножить
-        // между собой и вывести ход вычислений в консоль.
+        /* Класс выводит решение и результат перемножения между собой всех цифр числа, введенного как аргумент
+        String args[0].
+        @param strNumber - введенный аргумент типа String
+        @param number - введеный аргумент типа long
+        @param checkNumber - введенный аргумент типа double
+        @param checkLine - введенный аргумент типа boolean
+        @param mult - результат перемножения
+        Выполняется проверка ввода на целочисленность и положительность, а так же на ввод только чисел и перполнение.*/
 
         String strNumber;
         double checkNumber;
@@ -12,7 +18,6 @@ public class loops_Task02 {
 
         long mult;
         long remainder;
-        String result;
 
         strNumber = args[0];
         mult = 1;
@@ -33,7 +38,6 @@ public class loops_Task02 {
                     mult *= remainder;
                     number /= 10;
                 }
-                // печать результата в консоль
                 System.out.print(forPrintResult(strNumber));
                 System.out.println("=" + mult);
             }

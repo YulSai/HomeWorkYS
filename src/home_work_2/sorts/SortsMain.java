@@ -1,9 +1,12 @@
 package home_work_2.sorts;
 
-import static home_work_2.arrays.ArraysUtils.*;
+import static home_work_2.utils.ArraysUtils.*;
 import static home_work_2.utils.SortsUtils.*;
 
 public class SortsMain {
+    /* В классе произведены сортировки массивов методами пузырьковой и шейкерной сортировок.
+        Методы импортированы из класса SortsUtils.
+        Результаты сортировок выведены в консоль*/
     public static void main(String[] args) {
         int[] arr;
 

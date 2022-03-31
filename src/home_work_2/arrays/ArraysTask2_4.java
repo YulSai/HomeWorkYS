@@ -2,14 +2,21 @@ package home_work_2.arrays;
 
 import java.util.Scanner;
 
-public class ArraysTask2_4 {
-    public static void main(String[] args) {
-        // задачи с массивами
+import static home_work_2.utils.ArraysUtils.*;
 
+public class ArraysTask2_4 {
+    /* В классе описаны методы решения задач с массивами:
+        sumPosElements - для нахождения суммы четных положительных элементов массива
+        sumPosElements - для нахождения максимального из элементов массива с четными индексами
+        averageElements - для нахождения элементов массива, которые меньше среднего арифметического
+        twoMinElements - для нахождения двух наименьших элементов массива
+        compressionArray - для cжатия массива, удалив элементы, принадлежащие интервалу и заполнив нулями
+        sumOfDigits - для нахождения суммы цифр массива
+        Результаты сортировок выведены в консоль*/
+    public static void main(String[] args) {
         int[] mas;
 
-        mas = home_work_2.arrays.ArraysUtils.arrayRandom(50, 100);
-
+        mas = arrayRandom(50, 100);
 
         // вызов методов решения задач и вывод результатов в консоль
         System.out.println("Cумма четных положительных элементов массива: " + sumPosElements(mas));
@@ -32,7 +39,6 @@ public class ArraysTask2_4 {
         System.out.println();
     }
 
-    // Метод для нахождения суммы четных положительных элементов массива
     public static int sumPosElements(int[] mas) {
         int sum = 0;
 
@@ -44,12 +50,8 @@ public class ArraysTask2_4 {
         return sum;
     }
 
-    // Метод для нахождения максимального из элементов массива с четными индексами
     public static int maxElements(int[] mas) {
         int max;
-        int length;
-
-        length = mas.length;
 
         max = 0;
         for (int i = 0; i < mas.length; i += 2) {
@@ -60,7 +62,6 @@ public class ArraysTask2_4 {
         return max;
     }
 
-    // Метод для нахождения элементов массива, которые меньше среднего арифметического
     public static String averageElements(int[] mas) {
         int min;
         int sum;
@@ -79,13 +80,12 @@ public class ArraysTask2_4 {
         for (int i = 0; i < mas.length; i++) {
             if (mas[i] < average) {
                 min = mas[i];
-                result = result + " " + mas[i];
+                result = result + " " + min;
             }
         }
         return result;
     }
 
-    // Метод для нахождения двух наименьших элементов массива
     public static String twoMinElements(int[] mas) {
         int minFirst;
         int minSecond;
@@ -120,7 +120,6 @@ public class ArraysTask2_4 {
         return result;
     }
 
-    // Метод для cжатия массива, удалив элементы, принадлежащие интервалу
     public static String compressionArray(int[] mas) {
         int[] masSecond;
         int a;
@@ -154,7 +153,6 @@ public class ArraysTask2_4 {
         return result;
     }
 
-    // Метод для нахождения суммы цифр массива
     public static int sumOfDigits(int[] mas) {
         int num;
         int numberOne;

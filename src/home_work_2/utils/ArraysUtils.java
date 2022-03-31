@@ -1,26 +1,13 @@
-package home_work_2.arrays;
+package home_work_2.utils;
 
 import java.util.Random;
 import java.util.Scanner;
 
 public class ArraysUtils {
-    public static void main(String[] args) {
-        int[] container;
+    /* В классе описаны методы для создания и инициализации массивов:
+        arrayFromConsole - метод для запроса и ввода информации пользователем через консоль
+        arrayRandom - метод создания массива рандомными числами в заданых значениях*/
 
-        container = arrayFromConsole();               // вызов метода создания массива с запросом данных с консоли
-        for (int i = 0; i < container.length; i++) {
-            System.out.print(container[i] + " ");
-        }
-
-        System.out.println();
-
-        container = arrayRandom(50, 100);               // вызов метода создания массива с рандомными числами
-        for (int i = 0; i < container.length; i++) {
-            System.out.print(container[i] + " ");
-        }
-    }
-
-    // метод для запроса и ввода информации пользователем через консоль
     public static int[] arrayFromConsole() {
         int size;
         int[] mas;
@@ -48,7 +35,6 @@ public class ArraysUtils {
         return mas;
     }
 
-    // метод создания массива рандомными числами в заданых значениях
     public static int[] arrayRandom(int size, int maxValueExclusion) {
         int[] container;
 

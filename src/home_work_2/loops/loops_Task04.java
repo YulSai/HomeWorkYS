@@ -4,8 +4,14 @@ import javax.imageio.ImageTranscoder;
 
 public class loops_Task04 {
     public static void main(String[] args) {
-        //Умножать число long a = 1; пока не произойдёт переполнение.
-        // В конце в консоль вывести сообщение со значением до переполнения и после переполнения.
+        /* Класс выводит результат умножения заданного числа со значением до переполнения и после переполнения..
+        @param a - множимое
+        @param b - множитель
+        @param max - максимальное значение, которое может принять тип long
+        @param resultNonoverflow - значение до переполнения
+        @param resultOverflow - значение после переполнения
+        @param count - счетчик
+        При решении использовался класс Math*/
 
         long a;
         long b;
@@ -19,23 +25,20 @@ public class loops_Task04 {
 
         // решение для 1.4.1.
         b = 3;
-        count = (long) (Math.log(max) / Math.log(Math.abs(b)));
 
+        count = (long) (Math.log(max) / Math.log(Math.abs(b))); // определяем максимальную степень числа b без переполнения
 
         resultNonoverflow = a * b;
 
-        for (int i = 0; i < (count - 1); i++) {
+        for (int i = 0; i < (count - 1); i++) { // цикл перемножения до переполнения
             resultNonoverflow *= b;
         }
         System.out.println("Значение до переполнения при умножении на " + b + ": " + resultNonoverflow);
-
-        resultOverflow = a * b;
-        for (int i = 0; i <= count; i++) {
-            resultOverflow *= b;
-        }
-        System.out.println("Значение после переполнения при при умножении на " + b + ": " + resultOverflow);
         System.out.println();
 
+        resultOverflow = resultNonoverflow * b; // результат при переполнении
+        System.out.println("Значение после переполнения при умножении на " + b + ": " + resultOverflow);
+        System.out.println();
 
         // решение для 1.4.2.
         b = 188;
@@ -46,11 +49,9 @@ public class loops_Task04 {
             resultNonoverflow *= b;
         }
         System.out.println("Значение до переполненияпри умножении на " + b + ": " + resultNonoverflow);
+        System.out.println();
 
-        resultOverflow = a * b;
-        for (int i = 0; i <= count; i++) {
-            resultOverflow *= b;
-        }
+        resultOverflow = resultNonoverflow * b;
         System.out.println("Значение после переполнения при умножении на " + b + ": " + resultOverflow);
         System.out.println();
 
@@ -63,11 +64,9 @@ public class loops_Task04 {
             resultNonoverflow *= b;
         }
         System.out.println("Значение до переполненияпри умножении на " + b + ": " + resultNonoverflow);
+        System.out.println();
 
-        resultOverflow = a * b;
-        for (int i = 0; i <= count; i++) {
-            resultOverflow *= b;
-        }
+        resultOverflow = resultNonoverflow * b;
         System.out.println("Значение после переполнения при умножении на " + b + ": " + resultOverflow);
         System.out.println();
 
@@ -80,11 +79,10 @@ public class loops_Task04 {
             resultNonoverflow *= b;
         }
         System.out.println("Значение до переполненияпри умножении на " + b + ": " + resultNonoverflow);
+        System.out.println();
 
-        resultOverflow = a * b;
-        for (int i = 0; i <= count; i++) {
-            resultOverflow *= b;
-        }
+        resultOverflow = resultNonoverflow * b;
         System.out.println("Значение после переполнения при умножении на " + b + ": " + resultOverflow);
+        System.out.println();
     }
 }
