@@ -16,44 +16,51 @@ public class CalculatorWithCounterAutoDecorator implements ICalculator {
 
     @Override
     public double plus(double a, double b) {
-        count++;
+        incrementCountOperation();
         return this.calc.plus(a, b);
     }
 
     @Override
     public double minus(double a, double b) {
-        count++;
+        incrementCountOperation();
         return this.calc.minus(a, b);
     }
 
     @Override
     public double add(double a, double b) {
-        count++;
+        incrementCountOperation();
         return this.calc.add(a, b);
     }
 
     @Override
     public double div(double a, double b) {
-        count++;
+        incrementCountOperation();
         return this.calc.div(a, b);
     }
 
     @Override
     public double pow(double a, int b) {
-        count++;
+        incrementCountOperation();
         return this.calc.pow(a, b);
     }
 
     @Override
     public double abs(double a) {
-        count++;
+        incrementCountOperation();
         return this.calc.abs(a);
     }
 
     @Override
     public double sqrt(double a) {
-        count++;
+        incrementCountOperation();
         return this.calc.sqrt(a);
+    }
+
+    /**
+     * метод увеличивает значение счетчика на единицу
+     */
+    private void incrementCountOperation() {
+        count++;
     }
 
     /**

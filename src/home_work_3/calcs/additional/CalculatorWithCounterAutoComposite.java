@@ -22,7 +22,7 @@ public class CalculatorWithCounterAutoComposite {
      * @return результат сложения
      */
     public double plus(double a, double b) {
-        count++;
+        incrementCountOperation();
         return this.calc.plus(a, b);
     }
 
@@ -33,7 +33,7 @@ public class CalculatorWithCounterAutoComposite {
      * @return разность
      */
     public double minus(double a, double b) {
-        count++;
+        incrementCountOperation();
         return this.calc.minus(a, b);
     }
 
@@ -44,7 +44,7 @@ public class CalculatorWithCounterAutoComposite {
      * @return произведение
      */
     public double add(double a, double b) {
-        count++;
+        incrementCountOperation();
         return this.calc.add(a, b);
     }
 
@@ -55,7 +55,7 @@ public class CalculatorWithCounterAutoComposite {
      * @return частное
      */
     public double div(double a, double b) {
-        count++;
+        incrementCountOperation();
         return this.calc.div(a, b);
     }
 
@@ -66,7 +66,7 @@ public class CalculatorWithCounterAutoComposite {
      * @return степень числа
      */
     public double pow(double a, int b) {
-        count++;
+        incrementCountOperation();
         return this.calc.pow(a, b);
     }
 
@@ -76,7 +76,7 @@ public class CalculatorWithCounterAutoComposite {
      * @return модуль числа
      */
     public double abs(double a) {
-        count++;
+        incrementCountOperation();
         return this.calc.abs(a);
     }
 
@@ -86,8 +86,15 @@ public class CalculatorWithCounterAutoComposite {
      * @return квадратный корень
      */
     public double sqrt(double a) {
-        count++;
+        incrementCountOperation();
         return this.calc.sqrt(a);
+    }
+
+    /**
+     * метод увеличивает значение счетчика на единицу
+     */
+    private void incrementCountOperation() {
+        count++;
     }
 
     /**

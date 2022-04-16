@@ -8,11 +8,13 @@ import home_work_3.calcs.additional.CalculatorWithCounterAutoSuper;
  */
 public class CalculatorWithCounterAutoSuperMain {
     public static void main(String[] args) {
-        double result;
-
         CalculatorWithCounterAutoSuper calc = new CalculatorWithCounterAutoSuper();
 
-        result = calc.plus(calc.plus(4.1, calc.add(15, 7)), calc.pow(calc.div(28, 5), 2));
+        double div = calc.div(28, 5);
+        double pow = calc.pow(div, 2);
+        double add = calc.add(15, 7);
+        double plus = calc.plus(pow, add);
+        double result = calc.plus(4.1, plus);
 
         System.out.println("4.1 + 15 * 7 + (28 / 5) ^ 2 = " + result);
         System.out.println("калькулятор использован " + calc.getCountOperation() + " раз.");

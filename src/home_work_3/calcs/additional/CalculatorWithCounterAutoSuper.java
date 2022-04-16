@@ -16,7 +16,7 @@ public class CalculatorWithCounterAutoSuper extends CalculatorWithMathExtends {
      * @return результат сложения
      */
     public double plus(double a, double b) {
-        count++;
+        incrementCountOperation();
         return super.plus(a, b);
     }
 
@@ -27,7 +27,7 @@ public class CalculatorWithCounterAutoSuper extends CalculatorWithMathExtends {
      * @return разность
      */
     public double minus(double a, double b) {
-        count++;
+        incrementCountOperation();
         return super.minus(a, b);
     }
 
@@ -38,7 +38,7 @@ public class CalculatorWithCounterAutoSuper extends CalculatorWithMathExtends {
      * @return произведение
      */
     public double add(double a, double b) {
-        count++;
+        incrementCountOperation();
         return super.add(a, b);
     }
 
@@ -49,7 +49,7 @@ public class CalculatorWithCounterAutoSuper extends CalculatorWithMathExtends {
      * @return частное
      */
     public double div(double a, double b) {
-        count++;
+        incrementCountOperation();
         return super.div(a, b);
     }
 
@@ -60,7 +60,7 @@ public class CalculatorWithCounterAutoSuper extends CalculatorWithMathExtends {
      * @return степень числа
      */
     public double pow(double a, int b) {
-        count++;
+        incrementCountOperation();
         return super.pow(a, b);
     }
 
@@ -70,7 +70,7 @@ public class CalculatorWithCounterAutoSuper extends CalculatorWithMathExtends {
      * @return модуль числа
      */
     public double abs(double a) {
-        count++;
+        incrementCountOperation();
         return super.abs(a);
     }
 
@@ -80,8 +80,15 @@ public class CalculatorWithCounterAutoSuper extends CalculatorWithMathExtends {
      * @return квадратный корень
      */
     public double sqrt(double a) {
-        count++;
+        incrementCountOperation();
         return super.sqrt(a);
+    }
+
+    /**
+     * метод увеличивает значение счетчика на единицу
+     */
+    private void incrementCountOperation() {
+        count++;
     }
 
     /**

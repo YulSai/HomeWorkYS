@@ -11,22 +11,27 @@ import home_work_3.calcs.simple.CalculatorWithMathCopy;
 
 public class CalculatorDecoratorMain {
     public static void main(String[] args) {
-        double result;
-
         ICalculator calc = new CalculatorWithCounterAutoDecorator(new CalculatorWithMemoryDecorator(new CalculatorWithMathCopy()));
 
-        result = calc.plus(4.1, calc.plus((calc.add(15, 7)), calc.pow(calc.div(28, 5), 2)));
+        double div = calc.div(28, 5);
+        double pow = calc.pow(div, 2);
+        double add = calc.add(15, 7);
+        double plus = calc.plus(pow, add);
+        double result = calc.plus(4.1, plus);
 
         System.out.println("4.1 + 15 * 7 + (28 / 5) ^ 2 = " + result);
 
         if (calc instanceof CalculatorWithCounterAutoDecorator) {
-            long resultCountOperation = ((CalculatorWithCounterAutoDecorator) calc).getCountOperation();
-            System.out.println("калькулятор использован " + resultCountOperation + " раз.");
-        }
-        if (((CalculatorWithCounterAutoDecorator) calc).getCalculator() instanceof CalculatorWithMemoryDecorator) {
-            ((CalculatorWithMemoryDecorator) ((CalculatorWithCounterAutoDecorator) calc).getCalculator()).setMemory();
-            double resultForMemory = ((CalculatorWithMemoryDecorator) ((CalculatorWithCounterAutoDecorator) calc).getCalculator()).getMemory();
-            System.out.println("последний сохраненный результат " + resultForMemory);
+            CalculatorWithCounterAutoDecorator calcTemp = (CalculatorWithCounterAutoDecorator) calc;
+            System.out.println("калькулятор использован " + calcTemp.getCountOperation() + " раз.");
+
+            ICalculator calcOther = calcTemp.getCalculator();
+
+            if (calcOther instanceof CalculatorWithMemoryDecorator) {
+                CalculatorWithMemoryDecorator resultForMemory = ((CalculatorWithMemoryDecorator) ((CalculatorWithMemoryDecorator) calcOther));
+                resultForMemory.setMemory();
+                System.out.println("последний сохраненный результат " + resultForMemory.getMemory());
+            }
         }
     }
 }

@@ -9,27 +9,21 @@ import home_work_3.calcs.additional.CalculatorWithCounterClassic;
  */
 public class CalculatorWithCounterClassicMain {
     public static void main(String[] args) {
-        double result;
-        double result1;
-        double result2;
-        double result3;
-        double result4;
-
         CalculatorWithCounterClassic calc = new CalculatorWithCounterClassic();
 
-        result1 = calc.add(15, 7);
+        double add = calc.add(15, 7);
         calc.incrementCountOperation();
 
-        result2 = calc.plus(4.1, result1);
+        double plus = calc.plus(4.1, add);
         calc.incrementCountOperation();
 
-        result3 = calc.div(28, 5);
+        double div = calc.div(28, 5);
         calc.incrementCountOperation();
 
-        result4 = calc.pow(result3, 2);
+        double pow = calc.pow(div, 2);
         calc.incrementCountOperation();
 
-        result = calc.plus(result2, result4);
+        double result = calc.plus(plus, pow);
         calc.incrementCountOperation();
 
         System.out.println("4.1 + 15 * 7 + (28 / 5) ^ 2 = " + result);

@@ -41,7 +41,7 @@ public class CalculatorWithCounterAutoAgregation {
      * @return результат сложения в зависимости от выбарнного класса калькулятора
      */
     public double plus(double a, double b) {
-        count++;
+        incrementCountOperation();
         if (calcWithOperator != null) {
             return calcWithOperator.plus(a, b);
         } else if (calcWithMathCopy != null) {
@@ -58,7 +58,7 @@ public class CalculatorWithCounterAutoAgregation {
      * @return разность в зависимости от выбарнного класса калькулятора
      */
     public double minus(double a, double b) {
-        count++;
+        incrementCountOperation();
         if (calcWithOperator != null) {
             return calcWithOperator.minus(a, b);
         } else if (calcWithMathCopy != null) {
@@ -75,7 +75,7 @@ public class CalculatorWithCounterAutoAgregation {
      * @return произведение в зависимости от выбарнного класса калькулятора
      */
     public double add(double a, double b) {
-        count++;
+        incrementCountOperation();
         if (calcWithOperator != null) {
             return calcWithOperator.add(a, b);
         } else if (calcWithMathCopy != null) {
@@ -92,7 +92,7 @@ public class CalculatorWithCounterAutoAgregation {
      * @return частное в зависимости от выбарнного класса калькулятора
      */
     public double div(double a, double b) {
-        count++;
+        incrementCountOperation();
         if (calcWithOperator != null) {
             return calcWithOperator.div(a, b);
         } else if (calcWithMathCopy != null) {
@@ -109,7 +109,7 @@ public class CalculatorWithCounterAutoAgregation {
      * @return степень числа в зависимости от выбарнного класса калькулятора
      */
     public double pow(double a, int b) {
-        count++;
+        incrementCountOperation();
         if (calcWithOperator != null) {
             return calcWithOperator.pow(a, b);
         } else if (calcWithMathCopy != null) {
@@ -125,7 +125,7 @@ public class CalculatorWithCounterAutoAgregation {
      * @return модуль числа в зависимости от выбарнного класса калькулятора
      */
     public double abs(double a) {
-        count++;
+        incrementCountOperation();
         if (calcWithOperator != null) {
             return calcWithOperator.abs(a);
         } else if (calcWithMathCopy != null) {
@@ -141,7 +141,7 @@ public class CalculatorWithCounterAutoAgregation {
      * @return квадратный корень в зависимости от выбарнного класса калькулятора
      */
     public double sqrt(double a) {
-        count++;
+        incrementCountOperation();
         if (calcWithOperator != null) {
             return calcWithOperator.sqrt(a);
         } else if (calcWithMathCopy != null) {
@@ -149,6 +149,13 @@ public class CalculatorWithCounterAutoAgregation {
         } else {
             return calcWithMathExtends.sqrt(a);
         }
+    }
+
+    /**
+     * метод увеличивает значение счетчика на единицу
+     */
+    private void incrementCountOperation() {
+        count++;
     }
 
     /**

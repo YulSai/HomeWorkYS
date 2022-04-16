@@ -74,13 +74,7 @@ public class CalculatorWithOperator implements ICalculator {
      * @return модуль числа
      */
     public double abs(double a) {
-        double result;
-        if (a >= 0) {
-            result = a;
-        } else {
-            result = a * -1;
-        }
-        return result;
+        return a < 0 ? -a : a;
     }
 
     /**

@@ -24,7 +24,7 @@ public class CalculatorWithMemoryDecorator implements ICalculator {
      * @return результат сложения
      */
     public double plus(double a, double b) {
-        count++;
+        incrementCountOperation();
         result = this.calculator.plus(a, b);
         return result;
     }
@@ -36,7 +36,7 @@ public class CalculatorWithMemoryDecorator implements ICalculator {
      * @return разность
      */
     public double minus(double a, double b) {
-        count++;
+        incrementCountOperation();
         result = this.calculator.minus(a, b);
         return result;
     }
@@ -48,7 +48,7 @@ public class CalculatorWithMemoryDecorator implements ICalculator {
      * @return произведение
      */
     public double add(double a, double b) {
-        count++;
+        incrementCountOperation();
         result = this.calculator.add(a, b);
         return result;
     }
@@ -60,7 +60,7 @@ public class CalculatorWithMemoryDecorator implements ICalculator {
      * @return частное
      */
     public double div(double a, double b) {
-        count++;
+        incrementCountOperation();
         result = this.calculator.div(a, b);
         return result;
     }
@@ -72,7 +72,7 @@ public class CalculatorWithMemoryDecorator implements ICalculator {
      * @return степень числа
      */
     public double pow(double a, int b) {
-        count++;
+        incrementCountOperation();
         result = this.calculator.pow(a, b);
         return result;
     }
@@ -83,7 +83,7 @@ public class CalculatorWithMemoryDecorator implements ICalculator {
      * @return модуль числа
      */
     public double abs(double a) {
-        count++;
+        incrementCountOperation();
         result = this.calculator.abs(a);
         return result;
     }
@@ -94,9 +94,16 @@ public class CalculatorWithMemoryDecorator implements ICalculator {
      * @return квадратный корень
      */
     public double sqrt(double a) {
-        count++;
+        incrementCountOperation();
         result = this.calculator.sqrt(a);
         return result;
+    }
+
+    /**
+     * метод увеличивает значение счетчика на единицу
+     */
+    private void incrementCountOperation() {
+        count++;
     }
 
     /**
