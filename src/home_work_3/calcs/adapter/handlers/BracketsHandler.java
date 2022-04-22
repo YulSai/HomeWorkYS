@@ -27,8 +27,8 @@ public class BracketsHandler implements IHandler {
             if (isMatch) {
                 CalculatorAdapter calc = new CalculatorAdapter();
                 String withoutBrackets = matcher.group(2).substring(1, matcher.group(2).length() - 1);
-                String strTemp = String.valueOf(calc.calcFromAdapter(withoutBrackets));
-                expression = expression.replace(matcher.group(2), strTemp);
+                String temp = String.valueOf(calc.calcFromAdapter(withoutBrackets));
+                expression = expression.replace(matcher.group(2), temp);
             }
         } while (isMatch);
 
