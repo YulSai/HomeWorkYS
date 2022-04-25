@@ -7,25 +7,27 @@ import home_work_3.calcs.simple.CalculatorWithMathExtends;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.PriorityQueue;
 
 /**
  * Класс с адаптером для реализации расчета выражения, переданного в String
  */
 public class CalculatorAdapter {
-    private final List<IHandler> listHandler = new LinkedList<>(); // для сортировки по приоритету мат операций
+    private final ICalculator calculator;
+    private final PriorityQueue<IHandler> queueHandler = new PriorityQueue<>((a, b)
+            -> b.getPriority() - a.getPriority());
 
     public CalculatorAdapter() {
-        ICalculator calculator = new CalculatorWithMathExtends();
-
-        listHandler.add(new PlusHandler(calculator));
-        listHandler.add(new BracketsHandler(calculator));
-        listHandler.add(new AbsHandler(calculator));
-        listHandler.add(new PowHandler(calculator));
-        listHandler.add(new DivHandler(calculator));
-        listHandler.add(new AddHandler(calculator));
-        listHandler.add(new MinusHandler(calculator));
-
-        listHandler.sort((a, b) -> b.getPriority() - a.getPriority());
+        this.calculator = new CalculatorWithMathExtends();
+        queueHandler.add(new PIHandler(this.calculator));
+        queueHandler.add(new EHandler(this.calculator));
+        queueHandler.add(new BracketsHandler(this.calculator));
+        queueHandler.add(new AbsHandler(this.calculator));
+        queueHandler.add(new PowHandler(this.calculator));
+        queueHandler.add(new DivHandler(this.calculator));
+        queueHandler.add(new AddHandler(this.calculator));
+        queueHandler.add(new MinusHandler(this.calculator));
+        queueHandler.add(new PlusHandler(this.calculator));
     }
 
     /**
@@ -34,7 +36,7 @@ public class CalculatorAdapter {
      * @return результат вычисления в double
      */
     public double calcFromAdapter(String expression) {
-        for (IHandler handler : listHandler) {
+        for (IHandler handler : queueHandler) {
             expression = handler.handle(expression);
         }
         return Double.parseDouble(expression);
