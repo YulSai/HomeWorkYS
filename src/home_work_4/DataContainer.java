@@ -205,11 +205,4 @@ public class DataContainer<T> implements Iterable<T> {
             throw new UnsupportedOperationException();
         }
     }
-
-
-    public static void main(String[] args) {
-        DataContainer<Integer> container2 = new DataContainer<>(new Integer[]{120, null, 5, null, null, -2, 0, 10});
-        sort(container2);
-        System.out.println("Элементы после сортировки: " + container2);
-    }
 }
