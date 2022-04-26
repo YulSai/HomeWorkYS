@@ -1,7 +1,9 @@
-package home_work_4;
+package home_work_4.сomparator;
 
 import java.util.Comparator;
-
+/**
+ * Класс для реализации интерфейса Comparator для String
+ */
 public class StringComparator implements Comparator<String>{
 
     @Override

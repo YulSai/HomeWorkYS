@@ -92,7 +92,7 @@ public class DataContainer<T> implements Iterable<T> {
     public boolean delete(T item) {
         int index;
         for (int i = 0; i < this.data.length - 1; i++) {
-            if (this.data[i] == item) {
+            if (this.data[i].equals(item)) {
                 for (int j = i; j < this.data.length - 1; j++) {
                     this.data[j] = this.data[j + 1];
                 }

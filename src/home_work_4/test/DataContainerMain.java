@@ -35,7 +35,10 @@ public class DataContainerMain {
         System.out.println("Изначальные элементы " + Arrays.toString(container.getItems()));
         // удаляем элемент Привет
         container.delete("Да никак. А ты?");
+        System.out.println("Элементы после удаления " + Arrays.toString(container.getItems()));
+        System.out.println();
         // удаляем элементы "Привет..." и "Привет! Ты как?" по номеру их индекса
+        System.out.println("Изначальные элементы " + Arrays.toString(container.getItems()));
         container.delete(1);
         container.delete(text1);
         System.out.println("Элементы после удаления " + Arrays.toString(container.getItems()));
