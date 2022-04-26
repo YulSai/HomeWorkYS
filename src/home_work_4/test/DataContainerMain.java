@@ -4,7 +4,6 @@ import home_work_4.DataContainer;
 import home_work_4.test.RelativesForTest.RelativesForTest;
 import home_work_4.test.RelativesForTest.comparatorForTest.RelativesForTest_Age;
 import home_work_4.test.RelativesForTest.comparatorForTest.RelativesForTest_Name;
-import home_work_4.test.RelativesForTest.comparatorForTest.RelativesForTest_Remove;
 import home_work_4.сomparator.StringComparator;
 
 import java.util.Arrays;
@@ -77,9 +76,5 @@ public class DataContainerMain {
 
         sort(container3, new RelativesForTest_Age());
         System.out.println("Элементы после сортировки по возрасту: " + container3);
-        System.out.println();
-
-        sort(container3, new RelativesForTest_Remove());
-        System.out.println("Элементы после сортировки по степени родства: " + container3);
     }
 }

@@ -106,6 +106,35 @@ public class DataContainer<T> implements Iterable<T> {
     }
 
     /**
+     * Метод сравнивает объект DataContainer <?> с другим объектом
+     *
+     * @param obj объект, c которым необходимо сравнить текущий объект
+     * @return если объекты равны - true, если объекты не равны - false
+     */
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+
+        DataContainer<?> other = (DataContainer<?>) obj;
+        return Arrays.equals(data, other.data);
+    }
+
+    /**
+     * Метод получает hash-сode объекта по полю data
+     *
+     * @return hash-сode объекта
+     */
+    @Override
+    public int hashCode() {
+        return Arrays.hashCode(data);
+    }
+
+    /**
      * Метод сортирует данные в поле data с использованием реализации сравнения из переданного объекта comparator
      *
      * @param comparator сравнитель для сравнения данных в поле data
