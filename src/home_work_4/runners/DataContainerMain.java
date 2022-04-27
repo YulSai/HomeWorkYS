@@ -1,9 +1,10 @@
-package home_work_4.test;
+package home_work_4.runners;
 
 import home_work_4.DataContainer;
-import home_work_4.test.RelativesForTest.RelativesForTest;
-import home_work_4.test.RelativesForTest.comparatorForTest.RelativesForTest_Age;
-import home_work_4.test.RelativesForTest.comparatorForTest.RelativesForTest_Name;
+import home_work_4.runners.RelativesForTest.RelativesForTest;
+import home_work_4.runners.RelativesForTest.comparatorForTest.RelativesForTest_Age;
+import home_work_4.runners.RelativesForTest.comparatorForTest.RelativesForTest_Name;
+import home_work_4.сomparator.ComparatorComparable;
 import home_work_4.сomparator.StringComparator;
 
 import java.util.Arrays;
@@ -17,7 +18,7 @@ public class DataContainerMain {
     public static void main(String[] args) {
         DataContainer<String> container = new DataContainer<>(new String[0]);
 
-        // метод add
+       // метод add
         int index1 = container.add("Привет...");
         container.add("Привет! Ты как?");
         container.add("Да никак. А ты?");
@@ -47,6 +48,10 @@ public class DataContainerMain {
         // метод getItems, sort (comparator) и toString
         System.out.println("Изначальные элементы " + Arrays.toString(container.getItems()));
         container.sort(new StringComparator());
+        System.out.println("Элементы после удаления " + container);
+
+        System.out.println("Изначальные элементы " + Arrays.toString(container.getItems()));
+        container.sort(new ComparatorComparable<>());
         System.out.println("Элементы после удаления " + container);
 
         System.out.println();

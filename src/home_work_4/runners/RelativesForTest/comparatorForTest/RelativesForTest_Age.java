@@ -1,6 +1,6 @@
-package home_work_4.test.RelativesForTest.comparatorForTest;
+package home_work_4.runners.RelativesForTest.comparatorForTest;
 
-import home_work_4.test.RelativesForTest.RelativesForTest;
+import home_work_4.runners.RelativesForTest.RelativesForTest;
 
 import java.util.Comparator;
 

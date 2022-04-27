@@ -1,4 +1,4 @@
-package home_work_4.test.RelativesForTest;
+package home_work_4.runners.RelativesForTest;
 
 import java.util.Objects;
 

@@ -2,6 +2,7 @@ DataContainer решает пункты ДЗ 1-13.
 
 Пакет сomparator:
 StringComparator (класс с реализацией интерфейса Comparator для String) решает пункт ДЗ 9, 12
+ComparableComparator класс с реализацией интерфейса Comparator решает пункт ДЗ 9, 11, 12
 
 Пакет test:
 DataContainerMain класс для тестирования

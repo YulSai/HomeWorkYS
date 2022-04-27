@@ -1,5 +1,7 @@
 package home_work_4;
 
+import home_work_4.сomparator.ComparatorComparable;
+
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Iterator;
@@ -90,16 +92,12 @@ public class DataContainer<T> implements Iterable<T> {
      * @return true при удалении элемента или false если этого не произошло
      */
     public boolean delete(T item) {
-        int index;
-        for (int i = 0; i < this.data.length - 1; i++) {
+        if (item == null) {
+            return false;
+        }
+        for (int i = 0; i < this.data.length; i++) {
             if (this.data[i].equals(item)) {
-                for (int j = i; j < this.data.length - 1; j++) {
-                    this.data[j] = this.data[j + 1];
-                }
-                this.data = Arrays.copyOf(this.data, this.data.length - 1);
-                return true;
-            } else if (i == data.length) {
-                return false;
+                return delete(i);
             }
         }
         return false;
@@ -140,15 +138,7 @@ public class DataContainer<T> implements Iterable<T> {
      * @param comparator сравнитель для сравнения данных в поле data
      */
     public void sort(Comparator<T> comparator) {
-        for (int i = 0; i < this.data.length - 1; i++) {
-            for (int j = 0; j < this.data.length - 1; j++) {
-                if (comparator.compare(this.data[j], this.data[j + 1]) > 0) {
-                    T temp = this.data[j];
-                    this.data[j] = this.data[j + 1];
-                    this.data[j + 1] = temp;
-                }
-            }
-        }
+        sort(this, comparator);
     }
 
     /**
@@ -156,8 +146,23 @@ public class DataContainer<T> implements Iterable<T> {
      *
      * @return поле data без ячеек с null в виде строки
      */
+    @Override
     public String toString() {
-        return Arrays.toString(data).replaceAll(", null", "").replaceAll("null, ", "");
+        StringBuilder builder = new StringBuilder("[");
+        boolean needComma = false;
+        for (T item : this.data) {
+            if (item != null) {
+                if (needComma) {
+                    builder.append(", ");
+                } else {
+                    needComma = true;
+                }
+                builder.append(item);
+            }
+        }
+        builder.append("]");
+
+        return builder.toString();
     }
 
     /**
@@ -167,22 +172,7 @@ public class DataContainer<T> implements Iterable<T> {
      * @param <T>       обобщенный тип параметра container, который связан с интерфейсом Comparable
      */
     public static <T extends Comparable<T>> void sort(DataContainer<T> container) {
-        for (int i = 0; i < container.data.length - 1; i++) {
-            for (int j = 0; j < container.data.length - 1; j++) {
-                if (container.data[j] == null && container.data[j + 1] == null) {
-                } else if (container.data[j] == null && container.data[j + 1] != null) {
-                    T temp = container.data[j];
-                    container.data[j] = container.data[j + 1];
-                    container.data[j + 1] = temp;
-                } else if (container.data[j] != null && container.data[j + 1] != null) {
-                    if (container.data[j].compareTo(container.data[j + 1]) > 0) {
-                        T temp = container.data[j];
-                        container.data[j] = container.data[j + 1];
-                        container.data[j + 1] = temp;
-                    }
-                }
-            }
-        }
+        sort(container, new ComparatorComparable<>());
     }
 
     /**
@@ -194,15 +184,21 @@ public class DataContainer<T> implements Iterable<T> {
      * @param <T>        обобщенный тип параметров container и comparator
      */
     public static <T> void sort(DataContainer<T> container, Comparator<T> comparator) {
-        for (int i = 0; i < container.data.length - 1; i++) {
-            for (int j = 0; j < container.data.length - 1; j++) {
-                if (comparator.compare(container.data[j], container.data[j + 1]) > 0) {
-                    T temp = container.data[j];
-                    container.data[j] = container.data[j + 1];
-                    container.data[j + 1] = temp;
+        boolean needRepeat;
+        do {
+            needRepeat = false;
+            for (int i = 0; i < container.data.length; i++) {
+                for (int j = i + 1; j < container.data.length; j++) {
+                    if (comparator.compare(container.data[i], container.data[j]) > 0) {
+                        needRepeat = true;
+                        T temp = container.data[i];
+                        container.data[i] = container.data[j];
+                        container.data[j] = temp;
+                        break;
+                    }
                 }
             }
-        }
+        } while (needRepeat);
     }
 
     //реализация интерфейса Iterable
