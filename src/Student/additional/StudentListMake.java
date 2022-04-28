@@ -10,9 +10,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class StudentListMake {
-    String path = "D:\\Computer Science\\Java_Basics\\JD1\\HomeWork\\src\\students\\names.txt";
     RandomForStudent random = new RandomForStudent();
-
 
     /**
      * Метод создает список объектов класса Student с порядковым номером и рандомными именами,
