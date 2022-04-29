@@ -21,8 +21,8 @@ public class StudentListMake {
      */
     public List<Student> makeStudentList(int amt) {
         List<Student> listOfStudents = new ArrayList<>();
-        for (int i = 1; i <= amt; i++) {
-            int number = i;
+        for (int i = 0; i < amt; i++) {
+            int number = i + 1;
             String name = random.RandomUnderstandable();
             int age = random.ageRandom();
             double mark = random.markRandom();
@@ -43,8 +43,8 @@ public class StudentListMake {
         List<Student> listOfStudents = new ArrayList<>();
         String fileName = "C:/Users/yluya/IdeaProjects/JD1/HomeWork/src/Student/additional/resources/Name.txt";
         List<String> nameFromFile = readFile(fileName);
-        for (int i = 1; i <= amt; i++) {
-            int number = i;
+        for (int i = 0; i < amt; i++) {
+            int number = i + 1;
             String name = random.RandomNameFromFile(nameFromFile);
             int age = random.ageRandom();
             double mark = random.markRandom();
@@ -100,11 +100,15 @@ public class StudentListMake {
         int sum = 0;
         int amt = listOfStudents.size();
 
-        for (Student student : listOfStudents) {
-            sum += student.getAge();
+        if (amt == 0) {
+            System.out.println("В списке нет студентов!");
+        } else {
+            for (Student student : listOfStudents) {
+                sum += student.getAge();
+            }
+            return sum / amt;
         }
-
-        return sum / amt;
+        return 0;
     }
 
     /**
