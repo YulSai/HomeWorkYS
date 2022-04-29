@@ -13,11 +13,11 @@ public class StudentMain {
     public static void main(String[] args) throws IOException {
         StudentListMake list = new StudentListMake();
 
-        List<Student> listOfStudentsSymbols = list.makeStudentList(0);
+        List<Student> listOfStudentsSymbols = list.makeStudentList(1000);
         System.out.println("Список студентов: " + listOfStudentsSymbols);
         System.out.println();
 
-        List<Student> listOfStudents = list.makeStudentListFromFile(0);
+        List<Student> listOfStudents = list.makeStudentListFromFile(1000);
         System.out.println("Список студентов из файла: " + listOfStudents);
         System.out.println();
 
