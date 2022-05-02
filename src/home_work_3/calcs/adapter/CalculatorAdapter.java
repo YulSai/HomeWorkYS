@@ -7,6 +7,7 @@ import home_work_3.calcs.simple.CalculatorWithMathExtends;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Objects;
 import java.util.PriorityQueue;
 
 /**
@@ -40,5 +41,18 @@ public class CalculatorAdapter {
             expression = handler.handle(expression);
         }
         return Double.parseDouble(expression);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        CalculatorAdapter that = (CalculatorAdapter) o;
+        return Objects.equals(calculator, that.calculator) && Objects.equals(queueHandler, that.queueHandler);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(calculator, queueHandler);
     }
 }

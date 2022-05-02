@@ -1,4 +1,4 @@
-package HomeWork1;
+package home_work_1;
 
 import java.util.Scanner;
 
@@ -23,7 +23,6 @@ public class Task17 {
 
         for (int i = 0; i < 8; i++) {
             record = (((number & b) != 0) ? "1" : "0") + record;
-            System.out.println(record);
             b = b << 1;
         }
         return record;

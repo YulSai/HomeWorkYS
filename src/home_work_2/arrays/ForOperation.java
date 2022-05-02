@@ -14,48 +14,62 @@ public class ForOperation implements IArraysOperation {
         Результаты сортировок выведены в консоль*/
     int length;
     int i;
-    String result;
 
     // Метод для вывода всех элементов массива
     @Override
-    public void allElements(int[] container) {
+    public String allElements(int[] container) {
         length = container.length;
+        StringBuilder result = new StringBuilder();
+
+        if(length == 0) {
+            return "";
+        }
 
         System.out.println("Вывод всех элементов с помощью for");
-        result = "";
+
         for (i = 0; i < length; i++) {
-            result += container[i] + " ";
+            result.append(container[i]).append(" ");
         }
-        System.out.println(result);
-        System.out.println();
+
+        return String.valueOf(result);
     }
 
     // Метод для вывода каждого второго элемента массива
     @Override
-    public void everySecondElements(int[] container) {
+    public String everySecondElements(int[] container) {
         length = container.length;
+        StringBuilder result = new StringBuilder();
+
+        if(length == 0) {
+            return "";
+        }
 
         System.out.println("Вывод каждого второго элемента с помощью for");
-        result = "";
+
         for (i = 1; i < length; i += 2) {
-            result += container[i] + " ";
+            result.append(container[i]).append(" ");
         }
-        System.out.println(result);
-        System.out.println();
+
+        return String.valueOf(result);
     }
 
     // Метод для вывода всех элементов массива в обратном порядке
     @Override
-    public void reverseOrderElements(int[] container) {
+    public String reverseOrderElements(int[] container) {
         length = container.length;
+        StringBuilder result = new StringBuilder();
+
+        if(length == 0) {
+            return "";
+        }
 
         System.out.println("Вывод в обратном порядке с помощью for");
-        result = "";
+
         for (i = length - 1; i >= 0; i--) {
-            result += container[i] + " ";
+            result.append(container[i]).append(" ");
         }
-        System.out.println(result);
-        System.out.println();
+
+        return String.valueOf(result);
     }
 
     public static void main(String[] args) {
@@ -63,8 +77,12 @@ public class ForOperation implements IArraysOperation {
         container = arrayRandom(50, 100);
 
         ForOperation mas = new ForOperation();
-        mas.allElements(container);
-        mas.everySecondElements(container);
-        mas.reverseOrderElements(container);
+        System.out.println(mas.allElements(container));
+        System.out.println();
+
+        System.out.println(mas.everySecondElements(container));
+        System.out.println();
+
+        System.out.println(mas.reverseOrderElements(container));
     }
 }

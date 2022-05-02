@@ -1,4 +1,4 @@
-package HomeWork1;
+package home_work_1;
 
 //приоритетность операторов 2.5 (5 * 2 >> 2++) / --8
 

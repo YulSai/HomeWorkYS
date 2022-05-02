@@ -27,3 +27,6 @@ CalculatorWithMathExtendsMain решает пункт ДЗ 4.4
 CalculatorWithMemoryMain решает пункт ДЗ 10
 CalculatorWithOperatorMain решает пункт ДЗ 2.5
 WithoutCalculatorMain решает пункт ДЗ 1
+
+Пакет adapter:
+CalculatorAdapter решает пункт ДЗ 12

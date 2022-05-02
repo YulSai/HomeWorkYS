@@ -18,6 +18,7 @@ public class ArraysTask2_4 {
 
         mas = arrayRandom(50, 100);
 
+
         // вызов методов решения задач и вывод результатов в консоль
         System.out.println("Cумма четных положительных элементов массива: " + sumPosElements(mas));
         System.out.println();

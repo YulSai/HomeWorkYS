@@ -1,4 +1,4 @@
-package HomeWork1;
+package home_work_1;
 
 /*приоритетность операторов 2.8 6 - 2 > 3 && 12 * 12 <= 119
                             2.9 true && false */

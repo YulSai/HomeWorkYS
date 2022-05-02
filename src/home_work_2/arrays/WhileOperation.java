@@ -14,51 +14,65 @@ public class WhileOperation implements IArraysOperation {
         Результаты сортировок выведены в консоль*/
     int length;
     int i;
-    String result;
 
     @Override
-    public void allElements(int[] container) {
+    public String allElements(int[] container) {
         length = container.length;
+        StringBuilder result = new StringBuilder();
+
+        if(length == 0) {
+            return "";
+        }
 
         System.out.println("Вывод всех элементов с помощью while");
-        result = "";
+
         i = 0;
         while (i < length) {
-            result += container[i] + " ";
+            result.append(container[i]).append(" ");
             i++;
         }
-        System.out.println(result);
-        System.out.println();
+
+        return String.valueOf(result);
     }
 
     @Override
-    public void everySecondElements(int[] container) {
+    public String everySecondElements(int[] container) {
         length = container.length;
+        StringBuilder result = new StringBuilder();
+
+        if(length == 0) {
+            return "";
+        }
 
         System.out.println("Вывод каждого второго элемента с помощью while");
-        result = "";
+
         i = 1;
         while (i < length) {
-            result += container[i] + " ";
+            result.append(container[i]).append(" ");
             i += 2;
         }
-        System.out.println(result);
-        System.out.println();
+
+        return String.valueOf(result);
     }
 
     @Override
-    public void reverseOrderElements(int[] container) {
+    public String reverseOrderElements(int[] container) {
         length = container.length;
+        StringBuilder result = new StringBuilder();
+
+        if(length == 0) {
+            return "";
+        }
 
         System.out.println("Вывод в обратном порядке с помощью while");
-        result = "";
+
         i = length - 1;
         while (i >= 0) {
-            result += container[i] + " ";
+            result.append(container[i]).append(" ");
             i--;
         }
-        System.out.println(result);
-        System.out.println();
+
+        return String.valueOf(result);
     }
 
     public static void main(String[] args) {
@@ -66,8 +80,12 @@ public class WhileOperation implements IArraysOperation {
         container = arrayRandom(50, 100);
 
         WhileOperation mas = new WhileOperation ();
-        mas.allElements(container);
-        mas.everySecondElements(container);
-        mas.reverseOrderElements(container);
+        System.out.println(mas.allElements(container));
+        System.out.println();
+
+        System.out.println(mas.everySecondElements(container));
+        System.out.println();
+
+        System.out.println(mas.reverseOrderElements(container));
     }
 }

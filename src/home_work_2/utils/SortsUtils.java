@@ -1,10 +1,27 @@
 package home_work_2.utils;
 
+/**
+ * В классе описаны методы для сортировки массивов:
+ * bubble - метод пузырьковой сортировки
+ * shake - метод шейкерной сортировки
+ * Результаты сортировок выведены в консоль
+ */
 public class SortsUtils {
-    /* В классе описаны методы для сортировки массивов:
-        bubble - метод пузырьковой сортировки
-        shake - метод шейкерной сортировки
-        Результаты сортировок выведены в консоль*/
+
+    private int[] arr;
+
+    public SortsUtils(int[] arr) {
+        this.arr = arr;
+    }
+
+    public int[] getArr() {
+        return arr;
+    }
+
+    public void setArr(int[] arr) {
+        this.arr = arr;
+    }
+
 
     public static void bubble(int[] arr) {
         boolean sorted;
@@ -37,6 +54,7 @@ public class SortsUtils {
             result += arr[i] + " ";
         }
         System.out.printf(result);
+
     }
 
     public static void shake(int[] arr) {
@@ -81,8 +99,5 @@ public class SortsUtils {
         }
         System.out.printf(result);
         System.out.println();
-    }
-
-    public static void main(String[] args) {
     }
 }

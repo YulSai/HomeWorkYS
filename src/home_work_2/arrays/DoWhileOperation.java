@@ -15,51 +15,64 @@ public class DoWhileOperation implements IArraysOperation {
 
     int length;
     int i;
-    String result;
 
     @Override
-    public void allElements(int[] container) {
+    public String allElements(int[] container) {
         length = container.length;
+        StringBuilder result = new StringBuilder();
+
+        if(length == 0) {
+            return "";
+        }
 
         System.out.println("Вывод всех элементов с помощью do...while");
-        result = "";
         i = 0;
         do {
-            result += container[i] + " ";
+            result.append(container[i]).append(" ");
             i++;
         } while (i < length);
-        System.out.println(result);
-        System.out.println();
+
+        return String.valueOf(result);
     }
 
     @Override
-    public void everySecondElements(int[] container) {
+    public String everySecondElements(int[] container) {
         length = container.length;
+        StringBuilder result = new StringBuilder();
+
+        if(length == 0) {
+            return "";
+        }
 
         System.out.println("Вывод каждого второго элемента с помощью do...while");
-        result = "";
+
         i = 1;
         do {
-            result += container[i] + " ";
+            result.append(container[i]).append(" ");
             i += 2;
         } while (i < length);
-        System.out.println(result);
-        System.out.println();
+
+        return String.valueOf(result);
     }
 
     @Override
-    public void reverseOrderElements(int[] container) {
+    public String reverseOrderElements(int[] container) {
         length = container.length;
+        StringBuilder result = new StringBuilder();
+
+        if(length == 0) {
+            return "";
+        }
 
         System.out.println("Вывод в обратном порядке с помощью do...while");
-        result = "";
+
         i = length - 1;
         do {
-            result += container[i] + " ";
+            result.append(container[i]).append(" ");
             i--;
         } while (i >= 0);
-        System.out.println(result);
-        System.out.println();
+
+        return String.valueOf(result);
     }
 
     public static void main(String[] args) {
@@ -67,8 +80,12 @@ public class DoWhileOperation implements IArraysOperation {
         container = arrayRandom(50, 100);
 
         DoWhileOperation mas = new DoWhileOperation();
-        mas.allElements(container);
-        mas.everySecondElements(container);
-        mas.reverseOrderElements(container);
+        System.out.println(mas.allElements(container));
+        System.out.println();
+
+        System.out.println(mas.everySecondElements(container));
+        System.out.println();
+
+        System.out.println(mas.reverseOrderElements(container));
     }
 }
