@@ -1,3 +1,21 @@
+Пакет calcs.adapter:
+CalculatorAdapter решает пункт ДЗ 12
+
+Пакет calcs.adapter.handlers:
+AbsHandler решает пункт ДЗ 12
+AddHandler решает пункт ДЗ 12
+BracketsHandler решает пункт ДЗ 12
+DivHandler решает пункт ДЗ 12
+EHandler решает пункт ДЗ 12
+MinusHandler решает пункт ДЗ 12
+PatternHandler решает пункт ДЗ 12
+PIHandler решает пункт ДЗ 12
+PlusHandler решает пункт ДЗ 12
+PowHandler решает пункт ДЗ 12
+
+Пакет calcs.adapter.handlers.api:
+IHandler интерфейс решает пункт ДЗ 12
+
 Пакет calcs.additional:
 CalculatorWithCounterAutoAgregation решает пункт ДЗ 7.3
 CalculatorWithCounterAutoAgregationInterface решает пункт ДЗ 9
@@ -28,5 +46,6 @@ CalculatorWithMemoryMain решает пункт ДЗ 10
 CalculatorWithOperatorMain решает пункт ДЗ 2.5
 WithoutCalculatorMain решает пункт ДЗ 1
 
-Пакет adapter:
-CalculatorAdapter решает пункт ДЗ 12
+Пакет test:
+ICalculatorTest тестирование методов ICalculator
+

@@ -1,8 +1,7 @@
 package home_work_2.arrays;
 
+import home_work_2.utils.ArraysUtils;
 import home_work_2.utils.IArraysOperation;
-
-import static home_work_2.utils.ArraysUtils.arrayRandom;
 
 public class ForEachOperation implements IArraysOperation {
     /* В классе описаны методы для сортировки массивов при помощи foreach:
@@ -74,7 +73,7 @@ public class ForEachOperation implements IArraysOperation {
 
     public static void main(String[] args) {
         int[] container;
-        container = arrayRandom(50, 100);
+        container = ArraysUtils.arrayRandom(50, 100);
 
         ForEachOperation mas = new ForEachOperation();
         System.out.println(mas.allElements(container));

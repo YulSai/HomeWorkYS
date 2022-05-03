@@ -1,15 +1,14 @@
 package home_work_2.test.loops;
 
+import home_work_2.loops.loops_Task01;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import static home_work_2.loops.loops_Task01.*;
 
 public class loops_Task01Test {
     @Test
     public void checkNumberNegative(){
         String strNumber = "-5";
-        boolean answer = checkNumber(strNumber);
+        boolean answer = loops_Task01.checkNumber(strNumber);
 
         Assertions.assertFalse(answer);
     }
@@ -17,7 +16,7 @@ public class loops_Task01Test {
     @Test
     public void checkNumberNotInteger(){
         String strNumber = "5.8";
-        boolean answer = checkNumber(strNumber);
+        boolean answer = loops_Task01.checkNumber(strNumber);
 
         Assertions.assertFalse(answer);
     }
@@ -25,7 +24,7 @@ public class loops_Task01Test {
     @Test
     public void checkNumberCorrect(){
         String strNumber = "5";
-        boolean answer = checkNumber(strNumber);
+        boolean answer = loops_Task01.checkNumber(strNumber);
 
         Assertions.assertTrue(answer);
     }
@@ -34,8 +33,8 @@ public class loops_Task01Test {
     @Test
     public void isNotOverlow(){
         long number = 5;
-        long result = calculateFactorial(number);
-        boolean answer = overcrowd(result, number);
+        long result = loops_Task01.calculateFactorial(number);
+        boolean answer = loops_Task01.overcrowd(result, number);
 
         Assertions.assertTrue(answer);
     }
@@ -43,8 +42,8 @@ public class loops_Task01Test {
     @Test
     public void isOverlow(){
         long number = 500;
-        long result = calculateFactorial(number);
-        boolean answer = overcrowd(result, number);
+        long result = loops_Task01.calculateFactorial(number);
+        boolean answer = loops_Task01.overcrowd(result, number);
 
         Assertions.assertFalse(answer);
     }
@@ -52,7 +51,7 @@ public class loops_Task01Test {
     @Test
     public void checkCalculateFactorialFor5(){
         long number = 5;
-        long answer = calculateFactorial(number);
+        long answer = loops_Task01.calculateFactorial(number);
         long correctAnswer = 120;
 
         Assertions.assertEquals(correctAnswer, answer);
@@ -61,7 +60,7 @@ public class loops_Task01Test {
     @Test
     public void checkCalculateFactorialFor12() {
         long number = 12;
-        long answer = calculateFactorial(number);
+        long answer = loops_Task01.calculateFactorial(number);
         long correctAnswer = 479001600;
 
         Assertions.assertEquals(correctAnswer, answer);
@@ -70,7 +69,7 @@ public class loops_Task01Test {
     @Test
     public void checkPrintResultFor5(){
         long number = 5;
-        String answer = forPrintResult(number);
+        String answer = loops_Task01.forPrintResult(number);
         String correctAnswer = "1 * 2 * 3 * 4 * 5";
 
         Assertions.assertEquals(correctAnswer, answer);
@@ -79,7 +78,7 @@ public class loops_Task01Test {
     @Test
     public void checkPrintResultFor12(){
         long number = 12;
-        String answer = forPrintResult(number);
+        String answer = loops_Task01.forPrintResult(number);
         String correctAnswer = "1 * 2 * 3 * 4 * 5 * 6 * 7 * 8 * 9 * 10 * 11 * 12";
 
         Assertions.assertEquals(correctAnswer, answer);

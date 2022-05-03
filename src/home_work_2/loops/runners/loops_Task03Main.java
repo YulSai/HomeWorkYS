@@ -1,8 +1,6 @@
 package home_work_2.loops.runners;
 
-import java.util.Scanner;
-
-import static home_work_2.loops.loops_Task03.*;
+import home_work_2.loops.loops_Task03;
 
 
 /**
@@ -11,11 +9,11 @@ import static home_work_2.loops.loops_Task03.*;
 public class loops_Task03Main {
     public static void main(String[] args) {
 
-        double numberOne = getNumberOne();
-        int numberTwo = getNumberTwo();
-        double degree = getExponentiationNumber(numberOne, numberTwo);
+        double numberOne = loops_Task03.getNumberOne();
+        int numberTwo = loops_Task03.getNumberTwo();
+        double degree = loops_Task03.getExponentiationNumber(numberOne, numberTwo);
 
-        print(numberOne, numberTwo, degree);
+        loops_Task03.print(numberOne, numberTwo, degree);
 
     }
 }

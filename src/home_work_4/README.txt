@@ -7,6 +7,9 @@ ComparableComparator класс с реализацией интерфейса C
 Пакет runners:
 DataContainerMain класс для тестирования
 
+Пакет test:
+DataContainerTest тестирование методов DataContainer
+
 Пакет runners.RelativesForTest:
 RelativesForTest дополнительный класс для тестирования
 

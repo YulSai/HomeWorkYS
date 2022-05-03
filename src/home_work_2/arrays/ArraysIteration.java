@@ -1,7 +1,5 @@
 package home_work_2.arrays;
 
-import java.util.Scanner;
-
 import static home_work_2.utils.ArraysUtils.*;
 
 public class ArraysIteration {

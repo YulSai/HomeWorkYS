@@ -25,7 +25,7 @@ public class SortsUtilsTest {
 
     @Test
     public void sortBubbleEx3(){
-        SortsUtils operation = new SortsUtils(new int[] {9,1,5,99,9,9});
+        SortsUtils operation = new SortsUtils(new int[] {9, 1 ,5 ,99 ,9 ,9});
         int[] correctAnswer = {1, 5, 9, 9, 9, 99};
         SortsUtils.bubble(operation.getArr());
 
@@ -79,7 +79,7 @@ public class SortsUtilsTest {
 
     @Test
     public void sortShakeEx3(){
-        SortsUtils operation = new SortsUtils(new int[] {9,1,5,99,9,9});
+        SortsUtils operation = new SortsUtils(new int[] {9, 1, 5, 99, 9, 9});
         int[] correctAnswer = {1, 5, 9, 9, 9, 99};
         SortsUtils.shake(operation.getArr());
 

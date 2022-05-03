@@ -1,6 +1,6 @@
 package home_work_2.loops.runners;
 
-import static home_work_2.loops.loops_Task01_star.*;
+import home_work_2.loops.loops_Task01_star;
 
 /**
  * Класс с точкой входа для класса loops_Task01_star
@@ -12,11 +12,11 @@ public class loops_Task01_starMain {
         long number;
         long result;
 
-        if (checkNumber(strNumber)) {
+        if (loops_Task01_star.checkNumber(strNumber)) {
             number = Long.parseLong(strNumber);
-            result = factorial(number);
-            if (overcrowd(result, number)) {
-                System.out.print(forPrintResult(number));
+            result = loops_Task01_star.factorial(number);
+            if (loops_Task01_star.overcrowd(result, number)) {
+                System.out.print(loops_Task01_star.forPrintResult(number));
                 System.out.println(" = " + result);
             }
         }

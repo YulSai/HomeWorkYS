@@ -1,6 +1,6 @@
 package home_work_2.loops.runners;
 
-import static home_work_2.loops.loops_Task02.*;
+import home_work_2.loops.loops_Task02;
 
 /**
  * Класс с точкой входа для класса loops_Task02
@@ -10,9 +10,9 @@ public class loops_Task02Main {
 
         String strNumber = args[0];
 
-        if (checkNumber(strNumber)) {
-            System.out.print(forPrintResult(strNumber));
-            System.out.println(" = " + multiplyNumber(strNumber));
+        if (loops_Task02.checkNumber(strNumber)) {
+            System.out.print(loops_Task02.forPrintResult(strNumber));
+            System.out.println(" = " + loops_Task02.multiplyNumber(strNumber));
         }
     }
 }
