@@ -9,6 +9,6 @@ public class WithoutCalculatorMain {
 
         result = 4.1 + 15 * 7 + Math.pow((28d / 5d), 2); // 140,46
 
-        System.out.println("4.1 + 15 * 7 + (28 / 5) ^ 2 = " + result);
+        System.out.printf("4.1 + 15 * 7 + (28 / 5) ^ 2 = " + "%.1f", result);
     }
 }

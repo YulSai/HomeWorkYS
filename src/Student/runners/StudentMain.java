@@ -39,8 +39,8 @@ public class StudentMain {
         System.out.println("Cписок студентов, отфильтрованных по возрасту и оценкам: " + filteredStudents);
         System.out.println();
 
-        System.out.println("Средний возраст отфильтрованных студентов: " + listFromFile.getAverageAge(filteredStudents));
-        System.out.println();
+        System.out.printf("Средний возраст отфильтрованных студентов: " + "%2.1f", listFromFile.getAverageAge(filteredStudents));
+        System.out.println("\n");
 
         filteredStudents.sort(new ComparatorComparable<>());
         System.out.println("Топ-10 отфильтрованных студентов по имени: ");

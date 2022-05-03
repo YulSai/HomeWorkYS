@@ -12,6 +12,6 @@ public class CalculatorWithAdapterMain {
 
         result = calculatorAdapter.calcFromAdapter(note);
 
-        System.out.println("4.1 + 15 * 7 + (28 / 5) ^ 2 = " + result);
+        System.out.printf("4.1 + 15 * 7 + (28 / 5) ^ 2 = " + "%.1f", result);
     }
 }

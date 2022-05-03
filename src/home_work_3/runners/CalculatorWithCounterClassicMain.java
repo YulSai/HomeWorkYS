@@ -26,7 +26,8 @@ public class CalculatorWithCounterClassicMain {
         double result = calc.plus(plus, pow);
         calc.incrementCountOperation();
 
-        System.out.println("4.1 + 15 * 7 + (28 / 5) ^ 2 = " + result);
+        System.out.printf("4.1 + 15 * 7 + (28 / 5) ^ 2 = " + "%.1f", result);
+        System.out.println();
         System.out.println("калькулятор использован " + calc.getCountOperation() + " раз.");
     }
 }

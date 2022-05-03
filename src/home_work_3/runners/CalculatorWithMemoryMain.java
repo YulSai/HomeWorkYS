@@ -23,7 +23,8 @@ public class CalculatorWithMemoryMain {
         calc.plus(4.1, calc.getMemory());
         calc.setMemory();
 
-        System.out.println("4.1 + 15 * 7 + (28 / 5) ^ 2 = " + calc.getMemory());
+        System.out.printf("4.1 + 15 * 7 + (28 / 5) ^ 2 = " + "%.1f", calc.getMemory());
+        System.out.println();
         System.out.println("калькулятор использован " + calc.getCountOperation() + " раз.");
     }
 }

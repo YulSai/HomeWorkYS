@@ -20,7 +20,8 @@ public class CalculatorWithCounterDelegateGenericMain {
         double plus = calc.plus(pow, add);
         double result = calc.plus(4.1, plus);
 
-        System.out.println("4.1 + 15 * 7 + (28 / 5) ^ 2 = " + result);
+        System.out.printf("4.1 + 15 * 7 + (28 / 5) ^ 2 = " + "%.1f", result);
+        System.out.println();
         System.out.println("калькулятор использован " + calc.getCountOperation() + " раз.");
 
         // 1.2. расчет выражения через CalculatorWithCounterAutoAgregation c калькулятором CalculatorWithOperator
@@ -33,7 +34,8 @@ public class CalculatorWithCounterDelegateGenericMain {
         plus = calc2.plus(pow, add);
         result = calc2.plus(4.1, plus);
 
-        System.out.println("4.1 + 15 * 7 + (28 / 5) ^ 2 = " + result);
+        System.out.printf("4.1 + 15 * 7 + (28 / 5) ^ 2 = " + "%.1f", result);
+        System.out.println();
         System.out.println("калькулятор использован " + calc2.getCountOperation() + " раз.");
 
         // 1.3. расчет выражения через CalculatorWithCounterAutoAgregation c калькулятором CalculatorWithMathCopy
@@ -46,7 +48,8 @@ public class CalculatorWithCounterDelegateGenericMain {
         plus = calc3.plus(pow, add);
         result = calc3.plus(4.1, plus);
 
-        System.out.println("4.1 + 15 * 7 + (28 / 5) ^ 2 = " + result);
+        System.out.printf("4.1 + 15 * 7 + (28 / 5) ^ 2 = " + "%.1f", result);
+        System.out.println();
         System.out.println("калькулятор использован " + calc3.getCountOperation() + " раз.");
 
         // 1.4. расчет выражения через CalculatorWithCounterAutoAgregation c калькулятором CalculatorWithMathExtends
@@ -59,7 +62,8 @@ public class CalculatorWithCounterDelegateGenericMain {
         plus = calc4.plus(pow, add);
         result = calc4.plus(4.1, plus);
 
-        System.out.println("4.1 + 15 * 7 + (28 / 5) ^ 2 = " + result);
+        System.out.printf("4.1 + 15 * 7 + (28 / 5) ^ 2 = " + "%.1f", result);
+        System.out.println();
         System.out.println("калькулятор использован " + calc3.getCountOperation() + " раз.");
     }
 }
