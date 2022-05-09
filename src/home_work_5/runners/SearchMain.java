@@ -1,6 +1,7 @@
 package home_work_5.runners;
 
-import home_work_5.additional.MakerForStringAndCollection;
+import home_work_5.additional.Collections.MakerForCollection;
+import home_work_5.additional.StringMaker.MakerForString;
 import home_work_5.additional.searchEngines.*;
 import home_work_5.additional.searchEngines.api.ISearchEngine;
 
@@ -8,8 +9,11 @@ import java.io.IOException;
 
 public class SearchMain {
     public static void main(String[] args) throws IOException {
-        MakerForStringAndCollection creator = new MakerForStringAndCollection();
-        String text = creator.createTextToString();
+        MakerForString handler = new MakerForString();
+        MakerForCollection creator = new MakerForCollection();
+
+
+        String text = handler.createTextToString();
         String text2 = "война война и мир Мир и";
 
         /* получаем информацию как часто встречаются слова "война", "и" (как союз), "мир"

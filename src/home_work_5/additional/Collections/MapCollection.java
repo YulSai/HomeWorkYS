@@ -6,18 +6,12 @@ import home_work_5.additional.Collections.comporator.ComparatorForListFromMapTit
 import java.util.*;
 
 public class MapCollection {
-    private String[] arr;
-
-    public Map<String, Integer> createMapCollection(String text) {
-        arr = text.split(" ");
+    public Map<String, Integer> createMapCollection(String[] arr) {
         Map<String, Integer> wordsAndCount = new HashMap<>();
 
         for (String s : arr) {
-            if (s.equals(" ") || s.equals("")) {
-            } else {
-                Integer count = wordsAndCount.get(s);
-                wordsAndCount.put(s, count == null ? 1 : count + 1);
-            }
+            Integer count = wordsAndCount.get(s);
+            wordsAndCount.put(s, count == null ? 1 : count + 1);
         }
         return wordsAndCount;
     }
@@ -38,18 +32,5 @@ public class MapCollection {
             result2.add(s.replaceAll("=", " - "));
         }
         return result2;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        MapCollection that = (MapCollection) o;
-        return Arrays.equals(arr, that.arr);
-    }
-
-    @Override
-    public int hashCode() {
-        return Arrays.hashCode(arr);
     }
 }
