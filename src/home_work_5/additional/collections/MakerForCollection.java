@@ -2,7 +2,6 @@ package home_work_5.additional.collections;
 
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 /**
  * Класс с методами создания и обработки коллекций Set и Map
@@ -10,47 +9,45 @@ import java.util.Set;
 public class MakerForCollection {
 
     /**
-     * Метод помещает массив строк в коллекцию Set
+     * Метод помещает обработанную строку из файла в коллекцию Set
      *
-     * @param text строка с помещенным в нее текстом из файла
+     * @param text обработанная строка с помещенным в нее текстом из файла
      * @return значение количества использованных слов в тексте
      */
-    public Set<String> createStringToSet(String text) {
+    public int createStringToSet(String text) {
         SetCollection set = new SetCollection();
-
         return set.createSetCollection(text);
     }
 
     /**
-     * Метод создает коллекцию Мар, затем наполняет коллекцию List значениями
-     * Key и Value из коллекции Мар и сортирует по количеству и наименованию и
-     * производит замену символа "=" на " - "
+     * Метод помещает обработанную строку из файла в коллекцию Мар, затем наполняет коллекцию List значениями
+     * Key и Value из коллекции Мар и сортирует по количеству и наименованию
      *
      * @param text обработанная строка с помещенным в нее текстом из файла
      * @return отсортированный по количеству и наименованию список строк
      */
-    public List<String> sortMap(String text) {
+    public List<Map.Entry<String, Integer>> sortMap(String text) {
         MapCollection map = new MapCollection();
-
         Map<String, Integer> wordsAndCount = map.createMapCollection(text);
-        List<Map.Entry<String, Integer>> list = map.sortFromMap(wordsAndCount);
-
-        return map.formatListFromString(list);
+        return map.sortFromMap(wordsAndCount);
     }
 
     /**
      * Метод выводит n Топ использованных в тексте слов
      *
-     * @param list отсортированный по количеству и наименованию список строк
-     * @param amt  количество позиций для вывода в Топ
+     * @param list   отсортированный по количеству и наименованию список строк
+     * @param amount количество позиций для вывода в Топ
      */
-    public void printTopMap(List<String> list, int amt) {
+    public String printTopMap(List<Map.Entry<String, Integer>> list, int amount) {
+        StringBuilder builder = new StringBuilder();
 
-        int count = 0;
-        for (String s : list) {
-            System.out.print(s + " раз; " + " / ");
-            if (count++ >= amt - 1)
+        for (Map.Entry<String, Integer> s : list) {
+            if (amount-- <= 0) {
                 break;
+            }
+            builder.append(s.getKey()).append(" - ").append(s.getValue()).append(" раз / ");
+
         }
+        return builder.toString();
     }
 }

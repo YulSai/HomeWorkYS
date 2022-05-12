@@ -12,9 +12,8 @@ public class SearchMain {
     public static void main(String[] args) throws IOException {
         MakerForString handler = new MakerForString();
 
+        // считываем текс из файла и получаем обработанную строку
         String text = handler.createTextToString();
-        text = handler.handleString(text);
-        System.out.println();
 
         /* получаем информацию как часто встречаются слова "война", "и" (как союз), "мир"
          с помощью EasySearch с учетом регистра

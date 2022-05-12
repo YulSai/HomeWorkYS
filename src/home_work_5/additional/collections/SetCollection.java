@@ -16,16 +16,17 @@ public class SetCollection {
      * @param text обработанная строка с помещенным в нее текстом из файла
      * @return коллекцию Set типа String
      */
-    public Set<String> createSetCollection(String text) {
+    public int createSetCollection(String text) {
         Set<String> wordsFromText = new HashSet<>();
 
-        Pattern pattern = Pattern.compile("[0-9a-zA-ZА-яЁё]+-?[0-9a-zA-ZА-яЁё]*");
+        Pattern pattern = Pattern.compile("[0-9a-zA-ZА-яЁё]+(-?[0-9a-zA-ZА-яЁё])*");
+      //  Pattern pattern = Pattern.compile("[\\wа-яА-ЯЁё-]+(-?[\\wа-яА-ЯЁё-])*");
         Matcher matcher = pattern.matcher(text);
 
         while (matcher.find()) {
             String word = matcher.group();
             wordsFromText.add(word);
         }
-        return wordsFromText;
+        return wordsFromText.size();
     }
 }

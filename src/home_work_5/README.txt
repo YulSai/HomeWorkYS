@@ -22,8 +22,11 @@ SearchEngineIgnoreCase - класс, реализующий интерфейс I
 SearchEnginePunctuationNormalizer - класс, реализующий интерфейс ISearchEngine с методами для поиска заданного слова и подсчета
 его количества в тексте без нежелательных символов, решает пункт ДЗ 4.3
 
+Пакет additional.stringMaker.supplier:
+FileToStringSupplier - класс с методом для считывания текста из файла, решает пункт ДЗ 2 и 4
+StringWithTextSupplier - класс с методом для обработки строки с текстом из файла, решает пункт ДЗ 2 и 4
+
 Пакет additional.stringMaker:
-FileToString - класс с методом для считывания текста из файла, решает пункт ДЗ 2 и 4
 MakerForString - класс с методами обработки текса из файла, решает пункт ДЗ 2 и 4
 
 Пакет resources:
