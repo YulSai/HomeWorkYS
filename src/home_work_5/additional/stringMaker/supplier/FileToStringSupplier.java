@@ -7,8 +7,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.function.Supplier;
 
-import static java.nio.file.Path.of;
-
 /**
  * Класс с методом для считывания текста из файла
  */
@@ -27,7 +25,7 @@ public class FileToStringSupplier implements Supplier<String> {
     public String get() {
         String text = "";
         try {
-            Path path = of(fileName);
+            Path path = Path.of(fileName);
             text = Files.readString(path, StandardCharsets.UTF_8);
         } catch (
                 FileNotFoundException f) {

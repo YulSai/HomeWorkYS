@@ -30,7 +30,7 @@ public class SearchEnginePunctuationNormalizer implements ISearchEngine {
      * @param text строка с помещенным в нее текстом из файла
      * @return отформатированную строку без нежелательных символов
      */
-    public static String delete(String text) {
+    public String delete(String text) {
         String chars = "(\\.|,|:|;|=|\\*|\"|!|\\?|\\(|\\)|\n|\t|--|-\\s+|\\s+-|\\s+)";
         return text.replaceAll(chars, "  ").replaceAll("\\s{2,}", " ");
     }

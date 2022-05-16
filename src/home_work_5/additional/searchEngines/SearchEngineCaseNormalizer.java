@@ -2,6 +2,8 @@ package home_work_5.additional.searchEngines;
 
 import home_work_5.additional.searchEngines.api.ISearchEngine;
 
+import java.util.List;
+
 /**
  * Класс, реализующий интерфейс ISearchEngine с методами для поиска заданного слова и подсчета его количества в тексте
  * без учета падежей
@@ -22,9 +24,10 @@ public class SearchEngineCaseNormalizer implements ISearchEngine {
      */
     @Override
     public long search(String text, String word) {
-        String wordWithoutCase = word.replaceAll("[" + "аяоеуы" + "]$", "");
-        text = text.replaceAll(wordWithoutCase + "[" + "аяоеуы" + "]", word);
-
+        if (!List.of("а", "в", "и", "к", "о", "с", "у", "я").contains(word)) {
+            String wordWithoutCase = word.replaceAll("[аяоеуыи]$", "");
+            text = text.replaceAll(wordWithoutCase + "[аяоеуыи]", word);
+        }
         return searchEngine.search(text, word);
     }
 }

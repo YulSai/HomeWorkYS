@@ -2,7 +2,6 @@ package home_work_5.additional.stringMaker;
 
 
 import home_work_5.additional.stringMaker.supplier.FileToStringSupplier;
-import home_work_5.additional.stringMaker.supplier.StringWithTextSupplier;
 
 import java.util.function.Supplier;
 
@@ -11,27 +10,37 @@ import java.util.function.Supplier;
  */
 public class MakerForString {
 
+    private String fileName;
+
     /**
-     * Метод считывает текст из файла и помещает его в строку, затем обрабатывает строку, чтобы из нее можно
-     * было выделить отдельные слова
+     * Метод считывает текс из файла и сохраняет его как строку.
      *
-     * @return обработанную строку из файла
+     * @return строку с текстом из файла
      */
-    public String createTextToString() {
-        // String fileName = "C:\\Users\\yluya\\IdeaProjects\\JD1\\HomeWork\\src\\home_work_5\\resources\\Война и мир_книга.txt";
-        // String fileName = "C:\\Users\\yluya\\IdeaProjects\\JD1\\HomeWork\\src\\home_work_5\\resources\\fragment.txt";
-        // FileToString reader = new FileToString();
-
-        //  return reader.readerToString(fileName);
-
-        String fileName = "C:\\Users\\yluya\\IdeaProjects\\JD1\\HomeWork\\src\\home_work_5\\" +
-                "resources\\Война и мир_книга.txt";
-
+    public String createTextToString(String fileName) {
         Supplier<String> stringFromFile = new FileToStringSupplier(fileName);
-        String text = stringFromFile.get();
 
-        Supplier<String> stringWithText = new StringWithTextSupplier(text);
+        return stringFromFile.get();
+    }
 
-        return stringWithText.get();
+    /**
+     * Метод обрабатывает текст в строке, удаляя из нее часть нежелательных символов
+     *
+     * @return обработанную строку без нежелательных символов
+     */
+    public String getStringWithText(String text) {
+        String chars = "(\n|\t|_|--|-\\s+|\\s+-|\\s+)";
+        return text.replaceAll(chars, "  ").replaceAll("\\s{2,}", " ");
+    }
+
+    /**
+     * Метод получает строку из файла и обрабатывает ее
+     *
+     * @param fileName путь к файлу
+     * @return обработанную строку с текстом из файла
+     */
+    public String makeText(String fileName) {
+        String text = createTextToString(fileName);
+        return getStringWithText(text);
     }
 }

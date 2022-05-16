@@ -29,6 +29,7 @@ public class RegExSearchTest {
         String text9 = "бабушка бабушке бабушку";
         String text10 = "Привет - Привет, Привет";
 
+
         Assertions.assertEquals(1, searchEngine.search(text1, "привет"));
         Assertions.assertEquals(1, searchEngine.search(text1, "как"));
         Assertions.assertEquals(1, searchEngine.search(text1, "дела"));

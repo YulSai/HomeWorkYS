@@ -20,7 +20,7 @@ public class SetCollection {
         Set<String> wordsFromText = new HashSet<>();
 
         Pattern pattern = Pattern.compile("[0-9a-zA-ZА-яЁё]+(-?[0-9a-zA-ZА-яЁё])*");
-      //  Pattern pattern = Pattern.compile("[\\wа-яА-ЯЁё-]+(-?[\\wа-яА-ЯЁё-])*");
+       // Pattern pattern = Pattern.compile("[\\wа-яА-ЯЁё-]+(-?[\\wа-яА-ЯЁё-])*");
         Matcher matcher = pattern.matcher(text);
 
         while (matcher.find()) {

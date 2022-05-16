@@ -143,7 +143,7 @@ public class SearchEngineCaseNormalizerTest {
 
         Assertions.assertEquals(2, searchEngine.search(text1, "Война"));
         Assertions.assertEquals(2, searchEngine.search(text1, "мир"));
-        Assertions.assertEquals(8, searchEngine.search(text1, "я"));
+        Assertions.assertEquals(4, searchEngine.search(text1, "я"));
         Assertions.assertEquals(1, searchEngine.search(text1, "Хеппи-энд"));
         Assertions.assertEquals(3, searchEngine.search(text1, "раз"));
         Assertions.assertEquals(4, searchEngine.search(text1, "роман"));

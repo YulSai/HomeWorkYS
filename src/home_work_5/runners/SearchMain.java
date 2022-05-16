@@ -3,17 +3,23 @@ package home_work_5.runners;
 import home_work_5.additional.searchEngines.*;
 import home_work_5.additional.searchEngines.api.ISearchEngine;
 import home_work_5.additional.stringMaker.MakerForString;
+import home_work_5.additional.stringMaker.supplier.WarAndPeaceToStringSupplier;
 
 import java.io.IOException;
+import java.util.function.Supplier;
+
 /**
  * Класс с точкой входа для MakerForString и ISearchEngine
  */
 public class SearchMain {
     public static void main(String[] args) throws IOException {
+
+        Supplier<String> stringFromFile = new WarAndPeaceToStringSupplier();
         MakerForString handler = new MakerForString();
 
         // считываем текс из файла и получаем обработанную строку
-        String text = handler.createTextToString();
+     //   String text = handler.makeText();
+        String text = handler.getStringWithText(stringFromFile.get());
 
         /* получаем информацию как часто встречаются слова "война", "и" (как союз), "мир"
          с помощью EasySearch с учетом регистра
@@ -54,7 +60,6 @@ public class SearchMain {
         System.out.println("Союз \"и\" в тексте встречается: " + searchEngineIgnoreCase2.search(text, "и") + " раз");
         System.out.println("Слово \"мир\" в тексте встречается: " + searchEngineIgnoreCase2.search(text, "мир") + " раз");
         System.out.println("_______________");
-
 
         /*получаем информацию как часто встречаются слова "война", "и" (как союз), "мир" и удаляем нежелательные символы
          с помощью RegExSearch без учета регистра, используя декораторы SearchEngineIgnoreCase и SearchEnginePunctuationNormalizer
