@@ -10,7 +10,7 @@ import java.util.function.Supplier;
 /**
  * Класс для работы с текстом из файла
  */
-public class FileToStringSupplier implements Supplier<String> {
+public class FileToStringSupplier implements Supplier<String[]> {
     private final String fileName;
 
     public FileToStringSupplier(String fileName) {
@@ -23,7 +23,7 @@ public class FileToStringSupplier implements Supplier<String> {
      * @return строку с песнями из файла
      */
     @Override
-    public String get() {
+    public String[] get() {
         String text = "";
         try {
             Path path = Path.of(fileName);
@@ -36,16 +36,7 @@ public class FileToStringSupplier implements Supplier<String> {
             System.out.println("Ошибка чтения файла.");
             e.printStackTrace();
         }
-        return text;
-    }
-
-    /**
-     * Метод создает массив песен из строки
-     *
-     * @param text строка с песнями из файла
-     * @return массив песен
-     */
-    public String[] transformStringToArray(String text) {
         return text.split("\n");
+
     }
 }

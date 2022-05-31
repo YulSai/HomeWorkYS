@@ -1,8 +1,8 @@
 package SongsServer.additional.song;
 
 import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Класс с описанием объекта Song
@@ -11,8 +11,8 @@ public class Song {
 
     private String singer;
     private String nameSong;
-    private List<String> genre = new ArrayList<>();
-    private List<String> mood = new ArrayList<>();
+    private Set<String> genre = new HashSet<>();
+    private Set<String> mood = new HashSet<>();
     private String lengthSong;
 
     public Song() {
@@ -34,19 +34,19 @@ public class Song {
         this.nameSong = nameSong;
     }
 
-    public List<String> getGenre() {
+    public Set<String> getGenre() {
         return genre;
     }
 
-    public void setGenre(List<String> genre) {
+    public void setGenre(Set<String> genre) {
         this.genre = genre;
     }
 
-    public List<String> getMood() {
+    public Set<String> getMood() {
         return mood;
     }
 
-    public void setMood(List<String> mood) {
+    public void setMood(Set<String> mood) {
         this.mood = mood;
     }
 

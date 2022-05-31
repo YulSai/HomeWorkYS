@@ -13,8 +13,7 @@ import java.util.function.Supplier;
 public class SongSupplierFromFile implements Supplier<List<Song>> {
 
     private final String fileName = "C:\\Users\\yluya\\IdeaProjects\\JD1\\HomeWork\\src\\SongsServer\\resources\\Песни.txt";
-    FileToStringSupplier fileToStringSupplier = new FileToStringSupplier(fileName);
-    String[] songsString = fileToStringSupplier.transformStringToArray(fileToStringSupplier.get());
+    String[] songsString = new FileToStringSupplier(fileName).get();
 
     /**
      * Метод наполняет объект данными и создает коллекцию объектов
