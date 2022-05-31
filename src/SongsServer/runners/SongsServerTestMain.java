@@ -4,7 +4,6 @@ import SongsServer.additional.MakerSongsAndPlaylist;
 import SongsServer.additional.playlist.Playlist;
 import SongsServer.additional.song.Song;
 import SongsServer.additional.song.predicate.FilterGenre;
-import SongsServer.additional.song.supplier.SongSupplierFromArray;
 import SongsServer.additional.song.supplier.SongSupplierFromFile;
 
 import java.util.List;
@@ -59,9 +58,5 @@ public class SongsServerTestMain {
         Playlist playlistRock = new Playlist("Рок", "В авто для трассы", songsRock);
         makerSongs.makeResultPlaylist(pathToFolder, playlistRock);
         System.out.println("Плейлист поп-рок музыки: " + playlistRock);
-
-        SongSupplierFromArray supplier = new SongSupplierFromArray();
-        List<Song> songs2 = supplier.get();
-        System.out.println(songs2);
     }
 }
