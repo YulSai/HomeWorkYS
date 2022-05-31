@@ -12,7 +12,9 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.function.Predicate;
 
 /**
@@ -22,15 +24,47 @@ public class MakerSongsAndPlaylist {
     private final String pathToFolder = "C:\\Users\\yluya\\IdeaProjects\\JD1\\HomeWork\\src\\SongsServer\\resources";
 
     /**
+     * Метод формирует коллекцию песен по соответствию параметров "настроение" и "жанр" из выбранной песни
+     *
+     * @param songs    коллекция песен
+     * @param nameSong название выбранной песни
+     * @return отфильтрованную коллекцию
+     */
+    public Set<Song> filterSongsFromSampleSong(List<Song> songs, String nameSong) {
+        Set<Song> filterSongs = new HashSet<>();
+
+        for (Song s : songs) {
+            if (s.getNameSong().equals(nameSong)) {
+                for (String genre : s.getGenre()) {
+                    filterSongs.addAll(filterSongs(songs, new FilterGenre(genre)));
+                }
+
+                for (String mood : s.getMood()) {
+                    filterSongs.addAll(filterSongs(songs, new FilterMood(mood)));
+                }
+            }
+        }
+        return filterSongs;
+    }
+
+    /**
      * Метод формирует коллекцию песен по соответствию параметра "настроение" из выбранной песни
      *
      * @param songs    коллекция песен
      * @param nameSong название выбранной песни
      * @return отфильтрованную коллекцию
      */
-    public List<Song> filterSongsExampleMood(List<Song> songs, String nameSong) {
-        Predicate<Song> filterMood = new FilterMood(filterSongsFromSampleSongMood(songs, nameSong));
-        return filterSongs(songs, filterMood);
+    public Set <Song> filterSongsExampleMood(List<Song> songs, String nameSong) {
+        Set<Song> filterSongs = new HashSet<>();
+
+        for (Song s : songs) {
+            if (s.getNameSong().equals(nameSong)) {
+                for (String mood : s.getMood()) {
+                    filterSongs.addAll(filterSongs(songs, new FilterMood(mood)));
+                }
+            }
+        }
+        return filterSongs;
     }
 
     /**
@@ -40,43 +74,17 @@ public class MakerSongsAndPlaylist {
      * @param nameSong название выбранной песни
      * @return отфильтрованную коллекцию
      */
-    public List<Song> filterSongsExampleGenre(List<Song> songs, String nameSong) {
-        Predicate<Song> filterGenre = new FilterGenre(filterSongsFromSampleSongGenre(songs, nameSong));
-        return filterSongs(songs, filterGenre);
-    }
+    public Set<Song> filterSongsExampleGenre(List<Song> songs, String nameSong) {
+        Set<Song> filterSongs = new HashSet<>();
 
-    /**
-     * Метод получает параметр "настроение" из выбранной песни
-     *
-     * @param songs    коллекция песен
-     * @param nameSong название выбранной песни
-     * @return значение "настроение" в String
-     */
-    public String filterSongsFromSampleSongMood(List<Song> songs, String nameSong) {
-        String rightMood = "";
         for (Song s : songs) {
             if (s.getNameSong().equals(nameSong)) {
-                rightMood = String.valueOf(s.getMood());
+                for (String genre : s.getGenre()) {
+                    filterSongs.addAll(filterSongs(songs, new FilterGenre(genre)));
+                }
             }
         }
-        return rightMood.replaceAll("\\[", "").replaceAll("]", "");
-    }
-
-    /**
-     * Метод получает параметр "жанр" из выбранной песни
-     *
-     * @param songs    коллекция песен
-     * @param nameSong название выбранной песни
-     * @return значение "жанр" в String
-     */
-    public String filterSongsFromSampleSongGenre(List<Song> songs, String nameSong) {
-        String rightGenre = "";
-        for (Song s : songs) {
-            if (s.getNameSong().equals(nameSong)) {
-                rightGenre = String.valueOf(s.getGenre());
-            }
-        }
-        return rightGenre.replaceAll("\\[", "").replaceAll("]", "");
+        return filterSongs;
     }
 
     /**

@@ -29,8 +29,16 @@ public class SongSupplierFromFile implements Supplier<List<Song>> {
             String[] arr = s.split(" - ");
             song.setSinger(arr[0]);
             song.setNameSong(arr[1]);
-            song.getGenre().add(arr[2]);
-            song.getMood().add(arr[3]);
+
+            List<String> genres = List.of(arr[2].split(" *, * "));
+            for (String genre : genres){
+                song.getGenre().add(genre);
+            }
+
+            List<String> moods = List.of(arr[3].split(" *, * "));
+            for (String mood : moods){
+                song.getMood().add(mood);
+            }
             song.setLengthSong(arr[4]);
             songs.add(song);
         }

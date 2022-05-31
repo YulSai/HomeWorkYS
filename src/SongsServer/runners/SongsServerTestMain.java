@@ -7,12 +7,13 @@ import SongsServer.additional.song.predicate.FilterGenre;
 import SongsServer.additional.song.supplier.SongSupplierFromFile;
 
 import java.util.List;
+import java.util.Set;
 import java.util.function.Predicate;
 
 /**
  * Класс с точкой входа для методов работы с песнями
  */
-public class SongMain {
+public class SongsServerTestMain {
     public static void main(String[] args) {
         MakerSongsAndPlaylist makerSongs = new MakerSongsAndPlaylist();
         String pathToFolder = "C:\\Users\\yluya\\IdeaProjects\\JD1\\HomeWork\\src\\SongsServer\\resources";
@@ -35,13 +36,18 @@ public class SongMain {
         System.out.println("Список поп-рок музыки: " + songsRock);
         System.out.println("_____________________");
 
+        // создаем список песен отфильтрованных по такому же настроению и жанру, как в искомой песне
+        Set<Song> songsFromSampleSong = makerSongs.filterSongsFromSampleSong(songs, "Wings");
+        System.out.println("Песни с таким же настроением и жанром: " + songsFromSampleSong);
+        System.out.println("_____________________");
+
         // создаем список песен отфильтрованных по такому же настроению, как в искомой песне
-        List<Song> songsFromSampleSongMood = makerSongs.filterSongsExampleMood(songs, "Wings");
+        Set <Song> songsFromSampleSongMood = makerSongs.filterSongsExampleMood(songs, "Wings");
         System.out.println("Песни с таким же настроением: " + songsFromSampleSongMood);
         System.out.println("_____________________");
 
         // создаем список песен отфильтрованных по такому же жанру, как в искомой песне
-        List<Song> songsFromSampleSongGenre = makerSongs.filterSongsExampleGenre(songs, "Wings");
+        Set <Song> songsFromSampleSongGenre = makerSongs.filterSongsExampleGenre(songs, "Wings");
         System.out.println("Песни с таким же жанром: " + songsFromSampleSongGenre);
         System.out.println("_____________________");
 

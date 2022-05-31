@@ -1,5 +1,6 @@
 package SongsServer.additional.song;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -62,7 +63,10 @@ public class Song {
         double time = Double.parseDouble(getLengthSong());
         int minute = (int) time / 60;
         int seconds = (int) (time - minute * 60);
-        String lengthSong = minute + ":" + seconds;
+
+        DecimalFormat dF = new DecimalFormat( "00.##" );
+        String lengthSong = dF.format(minute) + ":" + dF.format(seconds);
+
         return getNameSong() + " - " + getSinger() + " " +
                 lengthSong + "\n";
     }
