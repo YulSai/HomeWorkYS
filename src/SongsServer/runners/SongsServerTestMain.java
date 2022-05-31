@@ -8,7 +8,6 @@ import SongsServer.additional.song.supplier.SongSupplierFromFile;
 
 import java.util.List;
 import java.util.Set;
-import java.util.function.Predicate;
 
 /**
  * Класс с точкой входа для методов работы с песнями
@@ -25,14 +24,12 @@ public class SongsServerTestMain {
         System.out.println("_____________________");
 
         // создаем список всех песен отфильтрованных по жанру "классика"
-        Predicate<Song> filterGenreClassic = new FilterGenre("классика");
-        List<Song> songsClassic = makerSongs.filterSongs(songs, filterGenreClassic);
+        List<Song> songsClassic = makerSongs.filterSongs(songs, new FilterGenre("классика"));
         System.out.println("Список классической музыки: " + songsClassic);
         System.out.println("_____________________");
 
         // создаем список всех песен отфильтрованных по жанру "поп-рок"
-        Predicate<Song> filterGenreRock = new FilterGenre("поп-рок");
-        List<Song> songsRock = makerSongs.filterSongs(songs, filterGenreRock);
+        List<Song> songsRock = makerSongs.filterSongs(songs, new FilterGenre("поп-рок"));
         System.out.println("Список поп-рок музыки: " + songsRock);
         System.out.println("_____________________");
 
