@@ -1,0 +1,16 @@
+Пакет additional.product.api:
+IProduct - интерфейс
+
+Пакет additional.product:
+DiscountProduct - класс, описывающий объект
+PromoProduct - класс, описывающий объект
+StandardProduct - класс, описывающий объект
+
+Пакет additional:
+Basket - класс, описывающий объект
+ProductInBasket - класс, описывающий объект
+Receipt - класс, описывающий объект
+Shop - класс, описывающий объект
+
+Пакет runners:
+ShopMain - класс с точкой входа
