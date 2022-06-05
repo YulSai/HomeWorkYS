@@ -1,6 +1,6 @@
-package home_work_4;
+package home_work_4.additional;
 
-import home_work_4.сomparator.ComparatorComparable;
+import home_work_4.additional.сomparator.ComparatorComparable;
 
 import java.util.Arrays;
 import java.util.Comparator;

@@ -1,13 +1,13 @@
 package home_work_4.test;
 
-import home_work_4.DataContainer;
-import home_work_4.runners.RelativesForTest.RelativesForTest;
-import home_work_4.runners.RelativesForTest.comparatorForTest.RelativesForTest_Name;
-import home_work_4.сomparator.ComparatorComparable;
+import home_work_4.additional.DataContainer;
+import home_work_4.additional.RelativesForTest.RelativesForTest;
+import home_work_4.additional.RelativesForTest.comparatorForTest.RelativesForTest_Name;
+import home_work_4.additional.сomparator.ComparatorComparable;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static home_work_4.DataContainer.sort;
+import static home_work_4.additional.DataContainer.sort;
 
 public class DataContainerTest {
     @Test

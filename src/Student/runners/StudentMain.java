@@ -8,7 +8,7 @@ import Student.additional.predicate.StudentAgeGreaterAndEqual;
 import Student.additional.predicate.StudentMarkGreater;
 import Student.additional.supplier.RusNameFromArraySupplier;
 import Student.additional.supplier.StudentWithNameAndIdSupplier;
-import home_work_4.сomparator.ComparatorComparable;
+import home_work_4.additional.сomparator.ComparatorComparable;
 
 import java.io.IOException;
 import java.util.List;

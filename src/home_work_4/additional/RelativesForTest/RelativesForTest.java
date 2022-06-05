@@ -1,4 +1,4 @@
-package home_work_4.runners.RelativesForTest;
+package home_work_4.additional.RelativesForTest;
 
 import java.util.Objects;
 
@@ -7,8 +7,8 @@ import java.util.Objects;
  */
 public class RelativesForTest {
     private final String remove;
-    private String name;
-    private double age;
+    private final String name;
+    private final double age;
 
     public RelativesForTest(String name, String remove, double age) {
         this.remove = remove;
